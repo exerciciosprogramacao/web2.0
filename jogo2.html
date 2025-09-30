@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="jogo2.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+  <div class="btt">
+    <button class="avancar">💰 25</button>
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+  
+  <h1>📘 Exercício de createElement - Cadastro de Pessoas</h1>
+
+  <div class="image">
+    <img src="./img/cadastrodepessoas com delete.PNG" style="height: 400px;" alt="">
+    <img src="./img/cadastrodepessoas com delete pessoa deletada.PNG" style="height: 400px;" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo do Projeto</h2>
+    <pre>
+- Criar um sistema de CRUD (Criação, Leitura, Atualização e Deleção) simples.
+- Permitir ao usuário adicionar novas linhas (pessoas) em uma tabela.
+- Permitir ao usuário remover linhas existentes com base nos dados informados.
+    </pre>
+    <p class="explicacao">👉 Este exercício foca em criar e manipular elementos HTML (especificamente linhas e células de tabela) diretamente no <strong>DOM</strong> (Document Object Model) usando JavaScript puro.</p>
+  </div>
+  
+
+  <div class="bloco">
+      <h2>🖱️ 1. Atribuindo Eventos aos Botões</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte1.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 O método <strong>document.getElementById( )</strong> busca um elemento HTML pelo seu atributo id. Usamos ele para localizar os botões de adicionar e remover.</p>
+      <p class="explicacao">👉 Ao atribuir uma função como adicionarPessoa à propriedade <strong>.onclick</strong> do elemento, dizemos ao navegador para executar essa função sempre que o botão for clicado.</p>
+     </div>
+     
+     <div class="bloco">
+      <h2>➕ 2. Função adicionarPessoa( ) - Criando Elementos</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte2.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 Primeiro, pegamos os valores que o usuário digitou nos campos de input usando <strong>.value</strong>.</p>
+      <p class="explicacao">👉 Em seguida, <strong>document.createElement( )</strong> é usado para criar novos elementos HTML na memória: uma linha de tabela <code>&lt;tr&gt;</code> e duas células de dados <code>&lt;td&gt;</code>.</p>
+      <p class="explicacao">👉 A propriedade <strong>.innerText</strong> é usada para inserir o texto (nome e idade) dentro das novas células.</p>
+     </div>
+
+     <div class="bloco">
+      <h2>📤 3. Função adicionarPessoa( ) - Inserindo na Tabela</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte3.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 O método <strong>.appendChild( )</strong> conecta os elementos, criando a hierarquia: as células são adicionadas à nova linha <code>novaLinha</code>, e a linha completa é adicionada à tabela identificada por <code>tablepeople</code>.</p>
+      <p class="explicacao">👉 No final, os campos de input são <strong>limpos</strong>, reatribuindo uma string vazia (<code>" "</code>) ao seu valor .value.</p>
+     </div>
+
+     <div class="bloco">
+      <h2>⛪ 4. Função removerPessoa( ) - Buscando e Comparando</h2>
+      <p class="explicacao">👉 Esta função é a mais complexa, pois ela itera "percorre" todas as linhas da tabela para encontrar e remover a entrada que corresponde ao Nome e Idade digitados pelo usuário. </p>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte4.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 Primeiro, pegamos os valores que o usuário digitou nos campos de input usando <strong>.value</strong>.</p>
+      <p class="explicacao">👉 <strong>document.getElementsByTagName"tr"</strong> obtém todas as linhas <code>&lt;tr&gt;</code> da página. 
+
+     </div>
+
+     <div class="bloco">
+      <h2>⛪ 4.1. Função removerPessoa( ) - for( ){</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte5.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 O loop <code>for</code> começa em <code>i = 1</code> para ignorar a primeira linha, que geralmente é o cabeçalho <code>th</code> e não deve ser analisado.</p>
+      <p class="explicacao">👉 Dentro do loop, pegamos o texto exato da primeira célula <code>[0]</code>, que é o nome cadastrado e da segunda célula <code>[1]</code>, que é a idade cadastrada. Isto para cada linha. Começando da linha 1 pois a 0 é a <code>th</code>.</p>
+     </div>
+
+     <div class="bloco">
+      <h2>⛪ 4.2. Função removerPessoa( ) - if( ){</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte6.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 A condição <strong><code>if</code></strong> verifica se o nome e a idade digitados no input são idênticos aos valores das variáveis que receberam o que estava na <code>td</code> da primeira linha, que armazena o nome e na outra <code>td</code> desta mesma linha, que armazena a idade.</p>
+      <p class="explicacao">👉 Se a condição <code>if</code> for verdadeira, o método <code>tabela.deleteRow(i)</code> é chamado. Ele usa o índice <code>i</code> para remover a linha da tabela permanentemente. O <code>return</code> encerra a função imediatamente após a remoção.</p>
+      <p class="explicacao">👉 O <code>else</code> serve quando o nome e a idade digitados não são iguais ao armazendo na tabela, isso quer dizer que não podemos deletar, pois não achamos ninguém.</p>
+     </div>
+
+     <div class="bloco">
+      <h2>⛪ 4.3. Função removerPessoa( ) - Limpando inputs</h2>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte7.PNG" alt="">
+        </div>
+      </pre>
+      <p class="explicacao">👉 No final, os campos de input são <strong>limpos</strong>, reatribuindo uma string vazia (<code>" "</code>) ao seu valor .value.</p>
+     </div>
+
+     <div class="bloco">
+      <h2>⛪ 5. Desafios - 1° desafio</h2>
+      <p class="explicacao">👉 Quando adicionarmos alguém na tabela, ao lado da idade da pessoa, deve aparacer escrito: anos, assim como na imagem abaixo.</p>
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte 8 desafio.PNG" style="width: 400px;" alt="">
+        </div>
+      </pre>
+      
+      <p class="explicacao">💰 Este desafio vale 5 moedas</p>
+    </div>
+
+    <div class="bloco">
+      <h2>⛪ 5. Desafios - 2° desafio</h2>
+      <p class="explicacao">👉 Voce deve criar mais um <code>label</code> e mais um <code>input</code> para que possamos adicionar outro dado.</p>
+      <p class="explicacao">👉 No javaScript você deve fazer esse complemento para mostrar esse dado na tabela e também para poder deletá-lo.</p>
+      
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte 8 desafio2.PNG" style="width: 450px;" alt="">
+        </div>
+      </pre>
+      
+      <p class="explicacao">💰 Este desafio vale 15 moedas</p>
+    </div>
+
+    <div class="bloco">
+      <h2>⛪ 5. Desafios - 3° desafio</h2>
+      <p class="explicacao">👉 Usando os mesmos conceitos, você deve criar o mesmo exercício, mas agora em uma lista.</p>
+      <p class="explicacao">👉 Os estilos da <code>ul</code> "css" só podem aparecer no projeto depois de adicionarmos alguém a lista!.</p>
+      
+      <pre>
+        <div class="image">
+          <img src="./img/createlemente parte 8 desafio3.PNG" style="width: 400px;" alt="">
+          <img src="./img/createlemente parte 8 desafio3 e 3.PNG" style="width: 400px;" alt="">
+
+        </div>
+      </pre>
+      
+      <p class="explicacao">💰 Este desafio vale 20 moedas</p>
+    </div>
+
+    <div class="bloco">
+      <h2>⛪ 5. Desafios - Desafio Final</h2>
+      <p class="explicacao">👉 Implemente um <code>if</code> no projetos da tabela e da lista, para que só possa adicionar alguém quando todos os campos estiverem preenchidos, caso contrário um alerta aparece na tela.</p>      
+      <p class="explicacao">💰 Este desafio vale 10 moedas</p>
+    </div>
+    
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./index.html">Voltar</a>
+  </button>
+    <button class="avancar">
+      <a href="./jogo3.html">Avançar</a>
+  </button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

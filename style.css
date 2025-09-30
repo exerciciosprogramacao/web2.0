@@ -1,0 +1,127 @@
+/* ======== TEMA PADRÃO (ANTES era body.dark) ======== */
+body {
+  background-color: #121212;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+.bloco {
+  margin-bottom: 20px;
+}
+
+/* .explicacao {
+  font-style: italic;
+} */
+.bt{
+  display: flex;
+  justify-content: flex-end;
+}
+.btt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.avancar, .voltar {
+  background-color: #1e1e1e;
+  border: solid 1px #555;
+  color: #eee;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.avancar:hover, .voltar:hover {
+  background-color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #eee;
+}
+
+.image {
+  max-width: 800px;
+  max-height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 700px;
+  max-height: 500px;
+  border-radius: 5px;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+button {
+  width: 62.67px;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-width: 300px;
+  }
+}
+
+/* ======== NOVO TEMA CYBERPUNK ========  */
+
+
+ body.cyberpunk {
+  background-color: #0d0221;
+  color: #00fff7;
+  box-shadow: 0 0 20px rgba(255,0,255,0.5);
+}
+
+body.tit{
+  color: #FCEE0A;
+}
+
+body.cyberpunk h2 {
+  /* background: linear-gradient(90deg, #ff00ff, #00ffff); */
+  background-color: #FCEE0A;
+  color: #0d0221;
+}
+
+
+
+body.cyberpunk .avancar,
+body.cyberpunk .voltar {
+  background-color: #1a0033;
+  border: solid 1px #ff00ff;
+  color: #00fff7;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+body.cyberpunk .avancar:hover,
+body.cyberpunk .voltar:hover {
+  background-color: #330066;
+  border-color: #00ffff;
+}
+
+body.cyberpunk a {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+body.cyberpunk img {
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+

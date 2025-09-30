@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+
+<body>
+  <div class="btt">
+    <button class="avancar">💰 15</button>
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+
+  <h1>📘 Exercício de Manipulação Simples com JavaScript</h1>
+
+  <div class="image">
+    <!-- <img src="./img/the last.PNG" alt=""> -->
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo do Exercício</h2>
+    <pre>
+- Manipular o conteúdo de um elemento HTML através de JavaScript.
+- Criar um evento de clique no botão para exibir uma mensagem na tela e no console usando uma função.
+
+👉 Este exercício visa entender como usar o JavaScript fora do HTML e interagir com a página.
+    </pre> 
+  </div>
+
+  <pre>
+    <div class="image">
+      <img src="./img/exe1html.PNG" alt="">
+    </div>
+  </pre>
+  <p class="explicacao">👉 Repare que temos o <strong>&lt;script src="script.js&gt; &lt;/script.js&gt;"</strong> no fim do nosso body, esse é um arquivo script.js que precisamos criar, ele é como um index.html só que agora para usarmos javaScript.</p>
+  <div class="bloco">
+    <h2>🧱 1. Selecionando o Elemento de Texto</h2>
+    <p class="explicacao">👉 Vamos selecionar o elemento <strong>parágrafo</strong> e alterar seu texto.</p>
+    <pre>
+- Selecionar o parágrafo com id "parag" e ecreva algo que aparece no html
+
+
+<div class="image">
+  <img src="./img/exe1getelement.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>document</strong> é usado para acessar o documento html.</p>
+    <p class="explicacao">👉 <strong>getElementById</strong> é usado para acessar um único elemento pelo seu id.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🖱️ 2. Criando o Evento de Clique</h2>
+<p class="explicacao">👉 Temos trê formas de fazer esse evento.</p>
+    <pre>
+- Somente com evento de onclick no id
+
+
+<div class="image">
+  <img src="./img/exe1 click com função.PNG" alt="">
+</div>
+  </pre>
+<p class="explicacao">👉 Quando o elemento com este ID for clicado, execute a função mensagem". A função mensagem simplesmente exibe uma caixa de diálogo com o texto "Botão clicado!".</p>  
+<pre>
+- Com addEventListener
+
+
+<div class="image">
+  <img src="./img/exe1 addevent.PNG" alt="">
+</div>
+</pre>
+<p class="explicacao">👉 var é para dizermos que temos uma variável, var botao, significa que demos o nome de botao a variável.</p>
+<p class="explicacao">👉 var botao = o símbolo de igual é para dizermos que nossa variável vai recebe algo.</p>
+<p class="explicacao">👉 document.getElementById("but"): Seleciona o botão com o id "but".</p>
+<p class="explicacao">👉 .addEventListener("click", mensagem): Adiciona um ouvinte para o evento de "clique" (click) e diz para executar a função mensagem quando isso acontecer.</p>
+<pre>
+- Com addEventListener e arrowFunction
+
+
+<div class="image">
+  <img src="./img/exe2 arrow function.PNG" alt="">
+</div>
+</pre>
+    <p class="explicacao">👉 cont é uma outra maneira de declarar uma variável, o tipo const é para variavéis que teram sempre o mesmo valor.</p>
+    <p class="explicacao">👉 const botao = document.getElementById("but");: Seleciona o botão na página que tem o id "but" e o armazena na variável botao.</p>
+    <p class="explicacao">👉 botao.addEventListener("click", ...): Adiciona um ouvinte de evento (addEventListener) ao botão. Ele espera por um evento de clique ("click").</p>
+    <p class="explicacao">👉 () => { ... }); Esta é uma arrow function, uma maneira curta de escrever uma função. O código dentro das chaves ({ ... }) será executado quando o clique ocorrer.</p>
+           
+  </div>
+
+  <div class="bt">
+    <!-- <button class="voltar">
+      <a href="./index.html">Voltar</a>
+    </button> -->
+    <button class="avancar">
+      <a href="./jogo2.html">Avançar</a>
+    </button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

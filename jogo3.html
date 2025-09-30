@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="jogo3.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+  <div class="btt">
+    <button class="avancar">💰 15</button>
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+  
+  <h1>📘 Documentação do Projeto - Carrossel</h1>
+
+  <div class="image">
+    <img src="./img/the last.PNG" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo do Projeto</h2>
+    <pre>
+- Criar um carrossel de imagens funcional usando JavaScript puro.
+- Ao clicar em um botão, a imagem correspondente deve aparecer.
+- Somente uma imagem e um botão ficam ativos por vez.
+    </pre>
+    <p class="explicacao">👉 Um exercício de lógica e manipulação de DOM com interações visuais.</p>
+  </div>
+  
+
+  <div class="bloco">
+    <h2>🧱 1. Selecionando os Elementos</h2>
+    <p class="explicacao">👉 Vamos usar uma lógica muito similar a que usamos no exercício do card com javaScript.</p>
+    <pre>
+- Como selecionar todos os <strong>botões</strong> do carrossel?
+
+
+<div class="image">
+  <img src="./img/exe2getelement.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>querySelectorAll</strong> retorna uma lista de todos os elementos que possuem a classe informada. Essa lista permite que você acesse cada botão ou imagem pelo índice (como se fosse um array).</p>
+    <p class="explicacao">👉 Exemplo: document.querySelectorAll('.icones') seleciona todos os ícones com a classe ícones.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🖱️ 2. Detectando Cliques nos Botões</h2>
+    <pre>
+- Use forEach para percorrer os botões
+
+
+<div class="image">
+  <img src="./img/exe2 for each.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>forEach</strong> é um método usado para percorrer listas (como as que vêm do querySelectorAll). Para cada botão, ele executa uma função.</p>
+    <p class="explicacao">👉 <strong>addEventListener</strong> é usado para reagir a eventos. Neste caso, estamos ouvindo o evento "click" em cada botão.</p>
+    <p class="explicacao">👉 Quando o botão for clicado, a função dentro do addEventListener será executada.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>❌ 3. Desmarcando o Botão Anterior</h2>
+    <pre>
+- Dentro do clique:
+
+
+<div class="image">
+  <img src="./img/exe2querry1.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>querySelector</strong> retorna o primeiro elemento que possui a classe informada. Aqui, ele pega o botão que está atualmente com a classe selecionado.</p>
+    <p class="explicacao">👉 Usamos classList.remove() para tirar a classe selecionado dele. Repare que não temos o . "ponto" antes da classe pois nos referimos a classe em sí e não ao seletor.</p>
+    <p class="explicacao">👉 Quando falamos de seletores temos sempre o . "ponto" na frente, quando falamos de classe não temos o ponto.</p>
+
+  </div>
+  
+  <div class="bloco">
+    <h2>✅ 4. Marcando o Novo Botão</h2>
+    <pre>
+- Adicione a classe "selecionado" no botão que foi clicado.
+
+
+<div class="image">
+  <img src="./img/exe2classadd1.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 O botão clicado está representado pela variável. Ao usar classList.add, ele ganha o estilo visual de selecionado.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🧼 5. Escondendo a Imagem Atual</h2>
+    <pre>
+- Selecione a imagem atual que está com a classe "ativa"
+
+
+<div class="image">
+  <img src="./img/exe2querry2.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 Assim como fizemos com os botões, removemos a classe da imagem atual, que está sendo exibida.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>👁️ 6. Mostrando a Imagem Certa</h2>
+    <pre>
+- Use o índice do botão clicado para acessar a imagem correspondente
+
+
+<div class="image">
+  <img src="./img/exe2classadd2.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 A imagem correta está na mesma posição (índice) que o botão é clicado.</p>
+    <p class="explicacao">👉 Assim, usamos imagens[indice] para pegar a imagem certa e classList.add('ativa') para exibi-la.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./jogo2.html">Voltar</a>
+  </button>
+    <button class="avancar">
+      <a href="./jogo4.html">Avançar</a>
+  </button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
