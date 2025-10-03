@@ -4,7 +4,7 @@ body {
   color: #eee;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
   font-family:'Courier New', Courier, monospace;
-
+  line-height: 1.2;
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -157,7 +157,9 @@ body.cyberpunk h2 {
   color: #333;
 
 }
-
+/* body.cyberpunk a:hover{
+  color: #ccc;
+} */
 body.cyberpunk h1{
   color: #333;
 }
@@ -192,7 +194,6 @@ body.cyberpunk a {
   border: 1px solid  #FCFF39;
   box-shadow: 0 0 15px #FCFF39;
 } */
-
 
 
 

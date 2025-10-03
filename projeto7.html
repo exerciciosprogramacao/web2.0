@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pokédex - Projeto API</title>
+  <link rel="stylesheet" href="projeto7.css"> 
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+
+  <div class="btt">
+    <button class="avancar">💰 35</button>
+  <button class="circle"><a href="./index.html">01</a></button>
+  <button class="circle"><a href="./projeto2.html">02</a></button>
+  <button class="circle"><a href="./projeto3.html">03</a></button>
+  <button class="circle"><a href="./projeto4.html">04</a></button>
+  <button class="circle"><a href="./projeto5.html">05</a></button>
+  <button class="circle"><a href="./projeto6.html">06</a></button>
+  <button class="circle"><a href="./projeto7.html">07</a></button>
+  <button class="circle"><a href="./projeto8.html">08</a></button>
+  <button class="circle"><a href="./projeto9.html">09</a></button>
+  <button class="circle"><a href="./projeto10.html">10</a></button>
+  <button class="circle"><a href="./projeto11.html">11</a></button>
+  <button class="circle"><a href="./projeto12.html">12</a></button>
+  <button class="circle"><a href="./projeto13.html">13</a></button>
+  <button class="circle"><a href="./projeto14.html">14</a></button>
+  <button class="circle"><a href="./projeto15.html">15</a></button>
+  <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+
+ <h1>Pokédex API</h1>
+
+<div class="image">
+  <img src="./img/pokedex.PNG">
+</div>
+
+ <div class="bloco">
+  <h2>🎯 Objetivo do Projeto</h2>
+  <pre>
+- Construir uma Pokédex interativa com API pública PokeAPI.
+- Exibir nome, ID, imagem e tipos de cada Pokémon em modelo de "cards".
+- Implementar um botão "Carregar Mais" para paginação.
+
+<a class="download" href="projeto7/projeto7.rar" download>💾 Clique aqui para baixar o Html, Css e imagens.</a>
+
+👉 Clique no link acima e baixe tudo em sua pasta. O arquivo é <code>.rar</code> 
+🖱 Clique com o botão direito encima do arquivo e clique em extrair arquivos, de ok.
+Após isso, uma pasta vai ser criada com todos os arquivos. 
+  </pre>
+ </div>
+ 
+ <div class="bloco">
+  <h2>🧱 1. Elementos e Variáveis de Controle</h2>
+  <pre>
+    <div class="image">
+      <img src="./img/poke1.PNG" alt="">
+    </div>
+  </pre>
+  <p class="explicacao">👉 A variável pokedex recebe o elemento de div com o id <code>("pokedex")</code>.</p>
+  <p class="explicacao">👉 A variável pokedex recebe o elemento de div com o id <code>("pokedex")</code>.</p>
+  <p class="explicacao">👉 A variável offset é declarada com a palavra-chave let (indicando que seu valor pode ser alterado/reatribuído) e é inicializada com o valor 0. Em contextos como a busca de dados de uma API (como a PokéAPI), o offset geralmente representa o ponto de partida (o "deslocamento") na lista de resultados.</p>
+  <p class="explicacao">👉 A variável limit é declarada com a palavra-chave const (indicando que seu valor não pode ser alterado/reatribuído) e é inicializada com o valor 150. Em um contexto de API, o limit geralmente especifica o número máximo de itens a serem retornados em uma única solicitação.</p>
+
+ </div>
+ 
+ <div class="bloco">
+  <h2>🌐 2. Função Assíncrona para Buscar Dados</h2>
+  <pre>
+    <div class="image">
+      <img src="./img/poke2.PNG" alt="">
+    </div>
+  </pre>
+  <p class="explicacao">👉 Declaração de uma função chamada getPokemons que é assíncrona (async). Funções assíncronas permitem o uso da palavra-chave await, o que pausa a execução da função até que uma Promessa seja resolvida. A função aceita dois parâmetros: offset e limit que virão das variáveis definidas nas linhas 3 e 4.</p>
+  <p class="explicacao">👉 Início de um bloco try. O código dentro deste bloco será executado, e se ocorrer algum erro (como um problema de rede ou um JSON malformado), a execução será interrompida e o controle será transferido para o bloco catch (linha 17).</p>
+  <p class="explicacao">👉 A variável url é declarada com const e armazena uma string que é o endereço da API da PokéAPI. Esta string usa uma Template Literal (indicada pelas crases `) para injetar dinamicamente os valores dos parâmetros offset e limit no URL, o que define quais Pokémon serão solicitados.</p>
+  <p class="explicacao">👉 A variável res armazena a resposta da chamada à API, realizada com a função fetch(url). A palavra-chave await garante que a execução pause até que a Promessa da solicitação de rede seja resolvida (ou seja, até que a resposta do servidor seja recebida).</p>
+  <p class="explicacao">👉 A variável data armazena o corpo da resposta HTTP (contido em res) convertido para um objeto JavaScript/JSON. O método .json() também é assíncrono e requer o await.</p>
+  <p class="explicacao">👉 Início de um loop for...of. Este loop itera sobre o array data.results, que é onde a API armazena a lista inicial de Pokémon (cada um contendo, no mínimo, um nome e um URL de detalhes).</p>
+  <p class="explicacao">👉 A variável pokeRes armazena a resposta de uma nova chamada fetch. Para cada Pokémon no loop, o código faz uma segunda chamada à API (usando o pokemon.url) para obter os dados detalhados daquele Pokémon específico (como imagem, tipos, etc.).</p>
+  <p class="explicacao">👉 A variável pokeData armazena o corpo da resposta da chamada detalhada (contida em pokeRes) convertido para um objeto JavaScript/JSON, que agora contém todas as informações detalhadas do Pokémon.</p>
+  <p class="explicacao">👉 Chamada de uma função externa de nome createCard. Esta função recebe o objeto pokeData (os dados detalhados do Pokémon) e provavelmente é responsável por criar e exibir um card HTML na página para esse Pokémon.</p>
+  <p class="explicacao">👉 Início do bloco catch. Este bloco é executado somente se ocorrer um erro em qualquer uma das linhas dentro do bloco try (linhas 8-16). Ele recebe o objeto de erro (error) como argumento.</p>
+  <p class="explicacao">👉 O método console.error() é usado para imprimir uma mensagem de erro no console do navegador, indicando que houve um problema ao tentar buscar os Pokémon. O erro real também pode ser inspecionado através da variável error.</p>
+
+  <p class="explicacao">👉 <strong>Resumindo:</strong> url guarda o endereço da API com os parâmetros de início (offset) e quantidade (limit) de pokémons.
+    res espera a resposta dessa URL.
+    data recebe essa resposta convertida para JSON → aqui vem a lista de pokémons, mas só com informações básicas (nome e url de detalhes).
+    No for...of, percorremos cada item de data.results (cada pokémon da lista).
+    pokeRes faz uma nova requisição usando o pokemon.url para pegar os detalhes de um pokémon específico.
+    pokeData guarda a resposta convertida em JSON → aqui sim vem todos os dados desse pokémon (id, nome, tipos, sprites etc).
+    createCard(pokeData) chama a função que monta o card na tela com esses dados.
+    Se alguma parte falhar, cai no catch e mostra "Erro ao buscar pokemon".
+    <p class="explicacao">👉 Então:</p>
+    <p class="explicacao">👉 data = lista simples de pokémons.</p>
+    <p class="explicacao">👉 pokeData = dados completos de um pokémon da lista.</p>
+</div>
+
+ <div class="bloco">
+  <h2>🖼️ 3. Função para Criar e Exibir o Card</h2>
+  <pre>
+    <div class="image">
+      <img src="./img/poke3.PNG" style="max-width: 780px;" alt="">
+    </div>
+  </pre>
+  <p class="explicacao">👉 Declaração de uma função chamada createCard, que foi chamada na linha 15. Ela recebe um parâmetro chamado pokemon, que contém os dados detalhados de um Pokémon. 👉 <strong>podeData</strong> </p>
+<p class="explicacao">👉 A variável card é declarada e armazena um novo elemento HTML div, criado dinamicamente com a função JavaScript document.createElement("div").</p>
+<p class="explicacao">👉 Adiciona a classe CSS &quot;card&quot; ao elemento div recém-criado, usando a propriedade classList.add( ).</p>
+<p class="explicacao">👉 A variável sprite é declarada. Ela tenta obter a URL da imagem de arte oficial do Pokémon em primeiro lugar (pokemon.sprites.other[&quot;official-artwork&quot;].front_default). Se essa URL não existir (o que é indicado pelo operador OR lógico ||), ela usa a sprite frontal padrão (pokemon.sprites.front_default) como alternativa.</p>
+<p class="explicacao">👉 Início da atribuição do conteúdo HTML interno do elemento card, usando a propriedade .innerHTML. É usado um Template Literal (crases `) para permitir a inserção de expressões JavaScript dentro da string.</p>
+<p class="explicacao">👉 Cria um elemento img (imagem). O atributo src (fonte) recebe o valor da variável sprite. O atributo alt (texto alternativo) recebe o nome do Pokémon (pokemon.name).</p>
+<p class="explicacao">👉 Cria um elemento div com a classe CSS &quot;name&quot;, que conterá o número e o nome do Pokémon.</p>
+<p class="explicacao">👉 Esta é a primeira parte do conteúdo da div da linha 31: exibe o símbolo # seguido do número do Pokémon (pokemon.id). O número é formatado usando o método .padStart(3, '0') (disponível em strings) para garantir que tenha sempre 3 dígitos, preenchendo com zeros à esquerda (ex: 1 se torna 001).</p>
+<p class="explicacao">👉 Esta é a segunda parte do conteúdo da div da linha 31: insere o nome do Pokémon (pokemon.name).</p>
+<p class="explicacao">👉 Cria um elemento div com a classe CSS &quot;types&quot;, que conterá as tags de tipo do Pokémon (ex: "Grass", "Poison").</p>
+<p class="explicacao">👉 Esta expressão JavaScript é responsável por processar o array de tipos do Pokémon (pokemon.types). O método .map( ) itera sobre cada tipo ( t ) e retorna uma nova string, que é um elemento span contendo o nome do tipo ( t.type.name ).</p>
+<p class="explicacao">👉 O método .join(" ") é chamado no array de strings retornado pelo .map( ). Ele junta todas as strings span em uma única string, sem nenhum separador, para que o HTML de todos os tipos seja inserido corretamente.</p>
+<p class="explicacao">👉 Fechamento do elemento div iniciado na linha 35.</p>
+<p class="explicacao">👉 Final da atribuição à propriedade .innerHTML.</p>
+<p class="explicacao">👉 O elemento card (que agora contém toda a estrutura HTML da linha 28 à 39) é adicionado como um novo elemento filho dentro do elemento pokedex (obtido na Linha 1). O método .appendChild() é a forma padrão de injetar elementos no DOM.</p>
+ <p class="explicacao">👉 <strong>Resumindo: </strong>createCard é chamada recebendo o que estava em pokeData, que agora entra como parâmetro pokemon.
+  card cria uma div e adiciona a classe "card".
+  sprite tenta carregar a imagem oficial do pokémon, se não existir, usa a sprite padrão como alternativa.
+  card.innerHTML é montado com uma tag img que mostra a imagem (sprite) e tem alt com o nome do pokémon (pokemon.name),
+  uma div class="name" que mostra o id do pokémon formatado com 3 dígitos (ex: #001), seguido do nome (Bulbasaur)
+  uma div class="types" com os tipos do pokémon. O .map( ) cria um span para cada tipo ( t.type.name ), e o .join(" ") junta tudo sem separador (ficando Grass Poison, cada um em um span). O span é usado porque é inline, deixando tudo na mesma linha.
+  Por fim, o card completo é adicionado dentro da pokedex (div principal) usando pokedex.appendChild(card).</p>
+</div>
+ 
+ <div class="bloco">
+  <h2>🖱️ 4. Evento do Botão "Carregar Mais"</h2>
+  <pre>
+    <div class="image">
+      <img src="./img/poke4.PNG" alt="">
+    </div>
+  </pre>
+<p class="explicacao">👉 O método .addEventListener() é usado para anexar um manipulador de eventos ao elemento loadMoreBtn (o botão "Carregar Mais"). O evento que ele está esperando é o "click". Quando o botão é clicado, a função de callback (a função de seta () =&gt; { ... }) será executada.</p>
+<p class="explicacao">👉 O valor atual da variável offset é incrementado pelo valor de limit (offset += limit é o mesmo que offset = offset + limit). Isso prepara a próxima chamada à API para começar a buscar dados a partir do final do lote anterior (ex: se o offset era 0 e o limit era 150, o novo offset será 150).</p>
+<p class="explicacao">👉 A função getPokemons é chamada, passando o novo valor de offset e o valor de limit. Isso inicia a busca e exibição do próximo lote de Pokémon.</p>
+<p class="explicacao">👉 Esta linha é a primeira chamada da função getPokemons quando o script é carregado. Ela inicia o processo de busca e exibição dos primeiros Pokémon (usando os valores iniciais de offset = 0 e limit = 150), preenchendo a tela logo de início.</p>
+<p class="explicacao" style="margin-bottom: 60px">👉 <Strong>Resumindo:</Strong> Linha 50: chama a função getPokemons(offset, limit) 👉 getPokemons(0, 150) logo que o script inicia, ou seja, começa mostrando do Pokémon #001 até  #150.
+Linha 45: quando o botão "Carregar mais" é clicado, o offset é atualizado com offset += limit. Assim, se antes era 0, passa a ser 150.
+Isso faz com que a próxima chamada busque os Pokémon a partir do #151 até  #300, sempre em blocos de 150, neste caso. Se você simplesmente alterar a variável limit, vai carregar em blocos no valor que você escolheu.</p>
+</div>
+ 
+ <div class="bt">
+  <button class="voltar">
+    <a href="./jogo6.html">Voltar</a>
+  </button>
+  <button class="circle"><a href="./index.html">01</a></button>
+  <button class="circle"><a href="./projeto2.html">02</a></button>
+  <button class="circle"><a href="./projeto3.html">03</a></button>
+  <button class="circle"><a href="./projeto4.html">04</a></button>
+  <button class="circle"><a href="./projeto5.html">05</a></button>
+  <button class="circle"><a href="./projeto6.html">06</a></button>
+  <button class="circle"><a href="./projeto7.html">07</a></button>
+  <button class="circle"><a href="./projeto8.html">08</a></button>
+  <button class="circle"><a href="./projeto9.html">09</a></button>
+  <button class="circle"><a href="./projeto10.html">10</a></button>
+  <button class="circle"><a href="./projeto11.html">11</a></button>
+  <button class="circle"><a href="./projeto12.html">12</a></button>
+  <button class="circle"><a href="./projeto13.html">13</a></button>
+  <button class="circle"><a href="./projeto14.html">14</a></button>
+  <button class="circle"><a href="./projeto15.html">15</a></button>
+  <button class="avancar">
+    <a href="./projeto8.html">Avançar</a>
+  </button>
+ </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
