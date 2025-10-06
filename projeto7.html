@@ -71,6 +71,8 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
       <img src="./img/poke2.PNG" alt="">
     </div>
   </pre>
+  <button class="accordion">Explicação detalhada</button>
+<div class="panel">
   <p class="explicacao">👉 Declaração de uma função chamada getPokemons que é assíncrona (async). Funções assíncronas permitem o uso da palavra-chave await, o que pausa a execução da função até que uma Promessa seja resolvida. A função aceita dois parâmetros: offset e limit que virão das variáveis definidas nas linhas 3 e 4.</p>
   <p class="explicacao">👉 Início de um bloco try. O código dentro deste bloco será executado, e se ocorrer algum erro (como um problema de rede ou um JSON malformado), a execução será interrompida e o controle será transferido para o bloco catch (linha 17).</p>
   <p class="explicacao">👉 A variável url é declarada com const e armazena uma string que é o endereço da API da PokéAPI. Esta string usa uma Template Literal (indicada pelas crases `) para injetar dinamicamente os valores dos parâmetros offset e limit no URL, o que define quais Pokémon serão solicitados.</p>
@@ -82,6 +84,8 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
   <p class="explicacao">👉 Chamada de uma função externa de nome createCard. Esta função recebe o objeto pokeData (os dados detalhados do Pokémon) e provavelmente é responsável por criar e exibir um card HTML na página para esse Pokémon.</p>
   <p class="explicacao">👉 Início do bloco catch. Este bloco é executado somente se ocorrer um erro em qualquer uma das linhas dentro do bloco try (linhas 8-16). Ele recebe o objeto de erro (error) como argumento.</p>
   <p class="explicacao">👉 O método console.error() é usado para imprimir uma mensagem de erro no console do navegador, indicando que houve um problema ao tentar buscar os Pokémon. O erro real também pode ser inspecionado através da variável error.</p>
+</div>
+  
 
   <p class="explicacao">👉 <strong>Resumindo:</strong> url guarda o endereço da API com os parâmetros de início (offset) e quantidade (limit) de pokémons.
     res espera a resposta dessa URL.
@@ -103,6 +107,8 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
       <img src="./img/poke3.PNG" style="max-width: 780px;" alt="">
     </div>
   </pre>
+  <button class="accordion">Explicação detalhada</button>
+  <div class="panel">
   <p class="explicacao">👉 Declaração de uma função chamada createCard, que foi chamada na linha 15. Ela recebe um parâmetro chamado pokemon, que contém os dados detalhados de um Pokémon. 👉 <strong>podeData</strong> </p>
 <p class="explicacao">👉 A variável card é declarada e armazena um novo elemento HTML div, criado dinamicamente com a função JavaScript document.createElement("div").</p>
 <p class="explicacao">👉 Adiciona a classe CSS &quot;card&quot; ao elemento div recém-criado, usando a propriedade classList.add( ).</p>
@@ -118,7 +124,8 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
 <p class="explicacao">👉 Fechamento do elemento div iniciado na linha 35.</p>
 <p class="explicacao">👉 Final da atribuição à propriedade .innerHTML.</p>
 <p class="explicacao">👉 O elemento card (que agora contém toda a estrutura HTML da linha 28 à 39) é adicionado como um novo elemento filho dentro do elemento pokedex (obtido na Linha 1). O método .appendChild() é a forma padrão de injetar elementos no DOM.</p>
- <p class="explicacao">👉 <strong>Resumindo: </strong>createCard é chamada recebendo o que estava em pokeData, que agora entra como parâmetro pokemon.
+  </div>
+<p class="explicacao">👉 <strong>Resumindo: </strong>createCard é chamada recebendo o que estava em pokeData, que agora entra como parâmetro pokemon.
   card cria uma div e adiciona a classe "card".
   sprite tenta carregar a imagem oficial do pokémon, se não existir, usa a sprite padrão como alternativa.
   card.innerHTML é montado com uma tag img que mostra a imagem (sprite) e tem alt com o nome do pokémon (pokemon.name),
@@ -134,10 +141,13 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
       <img src="./img/poke4.PNG" alt="">
     </div>
   </pre>
+  <button class="accordion">Explicação detalhada</button>
+  <div class="panel">
 <p class="explicacao">👉 O método .addEventListener() é usado para anexar um manipulador de eventos ao elemento loadMoreBtn (o botão "Carregar Mais"). O evento que ele está esperando é o "click". Quando o botão é clicado, a função de callback (a função de seta () =&gt; { ... }) será executada.</p>
 <p class="explicacao">👉 O valor atual da variável offset é incrementado pelo valor de limit (offset += limit é o mesmo que offset = offset + limit). Isso prepara a próxima chamada à API para começar a buscar dados a partir do final do lote anterior (ex: se o offset era 0 e o limit era 150, o novo offset será 150).</p>
 <p class="explicacao">👉 A função getPokemons é chamada, passando o novo valor de offset e o valor de limit. Isso inicia a busca e exibição do próximo lote de Pokémon.</p>
 <p class="explicacao">👉 Esta linha é a primeira chamada da função getPokemons quando o script é carregado. Ela inicia o processo de busca e exibição dos primeiros Pokémon (usando os valores iniciais de offset = 0 e limit = 150), preenchendo a tela logo de início.</p>
+  </div>
 <p class="explicacao" style="margin-bottom: 60px">👉 <Strong>Resumindo:</Strong> Linha 50: chama a função getPokemons(offset, limit) 👉 getPokemons(0, 150) logo que o script inicia, ou seja, começa mostrando do Pokémon #001 até  #150.
 Linha 45: quando o botão "Carregar mais" é clicado, o offset é atualizado com offset += limit. Assim, se antes era 0, passa a ser 150.
 Isso faz com que a próxima chamada busque os Pokémon a partir do #151 até  #300, sempre em blocos de 150, neste caso. Se você simplesmente alterar a variável limit, vai carregar em blocos no valor que você escolheu.</p>

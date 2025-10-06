@@ -1,28 +1,19 @@
-document.getElementById("parag").innerText = "Aqui eu escrevo algo";
+var acc = document.getElementsByClassName("accordion");
+var i;
+//cada accordion é um indice do for, isso é para poder usar com varios accordions no mesmo projeto
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
 
-const botao = document.getElementById("but");
+    this.classList.toggle("active");
 
-botao.addEventListener("click", () => {
-
-  alert("Teste de entrada da função");
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
 
 
 function toggleDarkMode() {

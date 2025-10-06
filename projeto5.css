@@ -21,6 +21,11 @@ pre{
   overflow-x: auto;
 }
 
+.exp{
+  font-family:'Courier New', Courier, monospace;
+
+}
+
 .accordion {
   background-color: #333;
   border-radius: 5px;
@@ -157,6 +162,9 @@ button {
     max-width: 300px;
   }
 
+  .image img{
+    max-width: 300px;
+  }
   .imagedupla{
     height: auto;
     display: flex;
