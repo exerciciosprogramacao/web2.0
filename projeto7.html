@@ -148,9 +148,34 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
 <p class="explicacao">👉 A função getPokemons é chamada, passando o novo valor de offset e o valor de limit. Isso inicia a busca e exibição do próximo lote de Pokémon.</p>
 <p class="explicacao">👉 Esta linha é a primeira chamada da função getPokemons quando o script é carregado. Ela inicia o processo de busca e exibição dos primeiros Pokémon (usando os valores iniciais de offset = 0 e limit = 150), preenchendo a tela logo de início.</p>
   </div>
-<p class="explicacao" style="margin-bottom: 60px">👉 <Strong>Resumindo:</Strong> Linha 50: chama a função getPokemons(offset, limit) 👉 getPokemons(0, 150) logo que o script inicia, ou seja, começa mostrando do Pokémon #001 até  #150.
+<p class="explicacao">👉 <Strong>Resumindo:</Strong> Linha 50: chama a função getPokemons(offset, limit) 👉 getPokemons(0, 150) logo que o script inicia, ou seja, começa mostrando do Pokémon #001 até  #150.
 Linha 45: quando o botão "Carregar mais" é clicado, o offset é atualizado com offset += limit. Assim, se antes era 0, passa a ser 150.
 Isso faz com que a próxima chamada busque os Pokémon a partir do #151 até  #300, sempre em blocos de 150, neste caso. Se você simplesmente alterar a variável limit, vai carregar em blocos no valor que você escolheu.</p>
+</div>
+
+<div class="bloco">
+  <h2>⛪ 5. Desafio - Usar a API Random User Generator</h2>
+  <p class="explicacao">👉 Modificar o projeto para funcionar com outra api.</p>
+  <p class="explicacao">👉 Poucas coisas precisam ser modificadas, como, URL e a passagem de dados.</p>
+
+  <pre>
+    <div class="image">
+      <img src="./img/userGeneratorlogo.PNG" alt="">
+    </div>
+    <div class="image">
+      <img src="./img/userGeneratorlogoURL.PNG" alt=""> 
+    </div>
+    <div class="image">
+      <img src="./img/userGeneratorlogo1.PNG" alt="">
+    </div>
+  </pre>
+  <p class="explicacao">👉 Repare em createCard(user): estamos chamando a função e passando para ela o parâmetro user.</p>
+  <p class="explicacao">👉 Na função function createCard(), devemos colocar o parâmetro dentro dos parênteses, com qualquer nome, pois ele recebe o que foi passado.</p>
+  <p class="explicacao">👉 No restante do código, sabemos que sempre usaremos esse parâmetro para acessar os dados.</p>
+  <p class="explicacao">👉 Exemplo: function createCard(randomUser).</p>
+  <p class="explicacao">👉 const sprite = user.picture.large.</p>
+  <p class="explicacao">👉 Altere o css para que tudo fique organizado.</p>
+  <p class="explicacao" style="margin-bottom: 60px">💰 Este desafio vale 10 moedas.</p>
 </div>
  
  <div class="bt">
