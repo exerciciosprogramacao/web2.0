@@ -4,7 +4,7 @@ body {
   color: #eee;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
   font-family:'Courier New', Courier, monospace;
-
+  line-height: 1.2;
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -19,6 +19,47 @@ h2 {
 
 pre{
   overflow-x: auto;
+}
+
+.accordion {
+  background-color: #333;
+  border-radius: 5px;
+  font-family:'Courier New', Courier, monospace;
+  
+  color: #eee;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #1e1e1e;
+
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #333;
+  border-radius: 5px;
+
+  display: none;
+  overflow: hidden;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 .bloco {
@@ -66,9 +107,19 @@ pre{
   background-color: #333;
 }
 
-a {
-  text-decoration: none;
+
+  a{
+    text-decoration: none;
   color:#999292;
+
+}
+.download{
+  font-size: large; 
+}
+.download:hover{
+  color: #333;
+  
+  
 }
 
 .image {
@@ -147,10 +198,45 @@ body.cyberpunk h2 {
   color: #333;
 
 }
-
+/* body.cyberpunk a:hover{
+  color: #ccc;
+} */
 body.cyberpunk h1{
   color: #333;
 }
+
+body.cyberpunk .accordion {
+  background-color:#eee ;
+
+  border-radius: 5px;
+  font-family:'Courier New', Courier, monospace;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+body.cyberpunk .active, body.cyberpunk .accordion:hover {
+  background-color: #ccc;
+
+
+}
+
+body.cyberpunk .panel {
+  padding: 0 18px;
+  background-color:#eee ;
+
+
+  border-radius: 5px;
+
+  display: none;
+  overflow: hidden;
+}
+
 
 body.cyberpunk .avancar,
 body.cyberpunk .voltar, 
@@ -182,3 +268,6 @@ body.cyberpunk a {
   border: 1px solid  #FCFF39;
   box-shadow: 0 0 15px #FCFF39;
 } */
+
+
+

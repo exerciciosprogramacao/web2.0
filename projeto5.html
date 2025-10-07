@@ -4,7 +4,7 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Exercícios</title>
-  <link rel="stylesheet" href="projeto5.css"> 
+  <link rel="stylesheet" href="projeto6.css"> 
   <link rel="icon" type="image/png" href="./img/logo.png">
 </head>
 <body>
@@ -29,16 +29,16 @@
   <button class="avancar" onclick="toggleDarkMode()">👓</button>
   </div>
 
- <h1>Calculo CPF</h1>
+ <h1>Cálculo de CPF</h1>
 
 <div class="image">
-  <img src="./img/logocpf.PNG">
+  <img src="./img/cpf0.PNG">
 </div>
 
  <div class="bloco">
   <h2>🎯 Objetivo do Projeto</h2>
   <pre>
-- Desenvolver o algoritmo para calcular os dois digitos verificadores de um cpf.
+- Desenvolver o algoritmo para calcular os dois dígitos verificadores de um CPF.
 - Esse processo garante que o CPF seja válido e único para cada pessoa.
 - Digite os 9 primeiros dígitos do CPF (somente números): 123456789
 - O programa vai calcular os dígitos finais:
@@ -167,8 +167,8 @@ CPF completo: 123.456.789-09
 
 <p class="explicacao">👉 A variável identification é declarada com const e recebe o elemento HTML de um campo de entrada/input com o ID.</p>
 <p class="explicacao">👉 O método .addEventListener() é chamado na variável identification para anexar um manipulador de eventos. O evento escutado é 'keydown' (disparado quando uma tecla é pressionada).</p>
-<p class="explicacao">👉 No if. Verificamos se a tecla que foi pressionada via event.key é a tecla Enter. Isso garante que o código dentro do bloco só será executado quando o usuário terminar de digitar e pressionar Enter.</p>
-<p class="explicacao">👉 Todo código a partir de agora será feito dentro do if, pois só executa se Enter for clicado.</p>
+<p class="explicacao">👉 No if, verificamos se a tecla que foi pressionada via event.key é a tecla Enter. Isso garante que o código dentro do bloco só será executado quando o usuário terminar de digitar e pressionar Enter.</p>
+<p class="explicacao">👉 Todo o código a partir de agora será feito dentro do if, pois só executa se Enter for clicado.</p>
   
 </div>
 
@@ -180,12 +180,12 @@ CPF completo: 123.456.789-09
     </div>
   </pre>
     <p class="explicacao">👉 A variável <strong>n</strong> recebe o número digitado no input e usa o <strong>split()</strong> para separar esse número todo, um por um. Usar o split somente com aspas significa que ele irá separar por vírgulas. Exemplo: 123456789 se torna 1,2,3,4,5,6,7,8,9.</p>
-    <p class="explicacao">👉 O <strong>for</strong> serve para percorrermos todos os números, ou seja, 9 números. Por isso o for começa em 0 e vai até ser igual a 8.</p>
+    <p class="explicacao">👉 O <strong>for</strong> serve para percorrermos todos os números, ou seja, 9 números. Por isso, o for começa em 0 e vai até ser igual a 8.</p>
     <p class="explicacao">👉 A variável <strong>calc</strong>, em cada iteração do laço, vai receber o número que está em <strong>n</strong> no índice <strong>j</strong>. Isso significa que o primeiro número do nosso 123456789 é 1, pois o separamos com o split. <strong>j</strong> é o índice que começa em 0, então sabemos que o número 1 se encontra na posição 0, o 2 na posição 1 e assim por diante.</p>
     <p class="explicacao">👉 <strong>n[j]</strong> deve ser multiplicado pelo peso do cálculo. Declaramos a variável <strong>i</strong> sendo 10, pois começamos o cálculo multiplicando por 10. Agora temos: 1 × 10.</p>
     <p class="explicacao">👉 Na linha 17, a nossa variável <strong>soma</strong> recebe seu próprio valor e soma com <strong>calc</strong>. <strong>soma += calc</strong>. A variável soma, que era 0, adicionou 10; então, soma agora é 10.</p>
     <p class="explicacao">👉 Por último, precisamos diminuir 1 de <strong>i</strong>, por isso o <strong>i--</strong>; agora, <strong>i</strong> é 9.</p>
-    <p class="explicacao">👉 O <strong>for</strong> fará isso com todos os 9 dígitos, sempre acrescentando na soma o novo valor de <strong>calc</strong>.</p>
+    <p class="explicacao">👉 O <strong>for</strong> fará isso com todos os 9 dígitos, sempre acrescentando à soma o novo valor de <strong>calc</strong>.</p>
     
 </div>
  
@@ -203,17 +203,17 @@ CPF completo: 123.456.789-09
 
 <div class="bloco">
   <h2>⛪ 5. Segundo verificador</h2>
-  <p class="explicacao">👉 Acabamos o cálculo do primeiro verificados, agora você deve fazer o sengundo verificador sozinho. Lembrese de mudar o valor de  i e de j.</p>
+  <p class="explicacao">👉 Acabamos o cálculo do primeiro verificador; agora você deve fazer o segundo verificador sozinho. Lembre-se de mudar o valor de <strong>i</strong> e de <strong>j</strong>.</p>
 </div>
 
 <div class="bloco">
-  <h2>🧮 4. Juntando e organizando o número</h2>
+  <h2>🧮 6. Juntando e organizando o número</h2>
   <pre>
     <div class="image">
       <img src="./img/cpf5.PNG" style="max-width: 780px;" alt="">
     </div>
   </pre>
-    <p class="explicacao">👉 Após você ter calculado o segundo verificador e tê-lo inserido no índice 10, obtendo o número correto com 11 dígitos,devemos juntar esse número novamente. Para isso, usaremos o <strong>join</strong> vazio com aspas: <strong>join('')</strong> serve para remover as vírgulas.</p>
+    <p class="explicacao">👉 Após você ter calculado o segundo verificador e tê-lo inserido no índice 10, obtendo o número correto com 11 dígitos, devemos juntar esse número novamente. Para isso, usaremos o <strong>join</strong> vazio com aspas: <strong>join('')</strong> serve para remover as vírgulas.</p>
     <p class="explicacao">👉 Tínhamos 1,2,3,4,5,6,7,8,9,0,9 e agora teremos 12345678909.</p>
     <p class="explicacao">👉 As linhas 53 e 54 são semelhantes. A linha 53 usa o que chamamos de <strong>Template String</strong>, uma forma mais prática de juntar texto com valores.</p>
     <p class="explicacao">👉 Precisamos formatar esse número, e é por isso que usaremos agora o <strong>slice</strong>. Ele serve para pegar partes específicas da string, permitindo inserir algo em posições específicas.</p>
@@ -225,7 +225,7 @@ CPF completo: 123.456.789-09
 
  <div class="bt">
   <button class="voltar">
-    <a href="./projeto4.html">Voltar</a>
+    <a href="./projeto5.html">Voltar</a>
   </button>
   <button class="circle"><a href="./index.html">01</a></button>
   <button class="circle"><a href="./projeto2.html">02</a></button>
@@ -243,7 +243,7 @@ CPF completo: 123.456.789-09
   <button class="circle"><a href="./projeto14.html">14</a></button>
   <button class="circle"><a href="./projeto15.html">15</a></button>
   <button class="avancar">
-    <a href="./projeto6.html">Avançar</a>
+    <a href="./projeto7.html">Avançar</a>
   </button>
  </div>
 

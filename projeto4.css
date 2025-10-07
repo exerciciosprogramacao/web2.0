@@ -66,19 +66,9 @@ pre{
   background-color: #333;
 }
 
-
-  a{
-    text-decoration: none;
+a {
+  text-decoration: none;
   color:#999292;
-
-}
-.download{
-  font-size: large; 
-}
-.download:hover{
-  color: #333;
-  
-  
 }
 
 .image {
@@ -187,13 +177,8 @@ body.cyberpunk a {
   color: #333;
   /* text-shadow: 0 0 5px #ff00ff; */
 }
-/* body.cyberpunk a:hover{
-  color: #ccc;
-} */
 
 /* body.cyberpunk img {
   border: 1px solid  #FCFF39;
   box-shadow: 0 0 15px #FCFF39;
 } */
-
-

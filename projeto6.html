@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="projeto6.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+  <div class="btt">
+    <button class="avancar">💰 20</button>
+    <button class="circle"><a href="./index.html">01</a></button>
+    <button class="circle"><a href="./projeto2.html">02</a></button>
+    <button class="circle"><a href="./projeto3.html">03</a></button>
+    <button class="circle"><a href="./projeto4.html">04</a></button>
+    <button class="circle"><a href="./projeto5.html">05</a></button>
+    <button class="circle"><a href="./projeto6.html">06</a></button>
+    <button class="circle"><a href="./projeto7.html">07</a></button>
+    <button class="circle"><a href="./projeto8.html">08</a></button>
+    <button class="circle"><a href="./projeto9.html">09</a></button>
+    <button class="circle"><a href="./projeto10.html">10</a></button>
+    <button class="circle"><a href="./projeto11.html">11</a></button>
+    <button class="circle"><a href="./projeto12.html">12</a></button>
+    <button class="circle"><a href="./projeto13.html">13</a></button>
+    <button class="circle"><a href="./projeto14.html">14</a></button>
+    <button class="circle"><a href="./projeto15.html">15</a></button>
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+  
+  <h1>Carrossel</h1>
+
+  <div class="image">
+    <img src="./img/the last.PNG" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo</h2>
+    <pre>
+- Criar um carrossel de imagens funcional usando JavaScript puro.
+- Ao clicar em um botão, a imagem correspondente deve aparecer.
+- Somente uma imagem e um botão ficam ativos por vez.
+
+<a class="download" href="projeto4/projeto4.rar" download>💾 Clique aqui para baixar o HTML, CSS e imagens.</a>
+
+👉 Clique no link acima e baixe tudo em sua pasta. O arquivo é <code>.rar</code>.
+🖱 Clique com o botão direito em cima do arquivo e selecione "Extrair arquivos", depois clique em OK.
+Após isso, uma pasta será criada com todos os arquivos.
+    </pre>
+    <p class="explicacao">👉 Um exercício de lógica e manipulação do DOM com interações visuais.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🧱 1. Selecionando os Elementos</h2>
+    <p class="explicacao">👉 Vamos usar uma lógica muito semelhante à que usamos no exercício do card com JavaScript.</p>
+    <pre>
+- Como selecionar todos os <strong>botões</strong> do carrossel?
+
+
+<div class="image">
+  <img src="./img/exe2getelement.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>querySelectorAll</strong> retorna uma lista de todos os elementos que possuem a classe informada. Essa lista permite que você acesse cada botão ou imagem pelo índice (como se fosse um array).</p>
+    <p class="explicacao">👉 Exemplo: <code>document.querySelectorAll('.botao')</code> seleciona todas as tags (elementos) com a classe "botao".</p>
+    <p class="explicacao">👉 No nosso caso, na primeira linha passamos os seis botões para a variável <code>botoesCarrossel</code>.</p>
+    <p class="explicacao">👉 Na segunda linha fazemos o mesmo com as imagens.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🖱️ 2. Detectando Cliques nos Botões</h2>
+    <pre>
+- Use forEach para percorrer os botões
+
+
+<div class="image">
+  <img src="./img/exe2 for each.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>forEach</strong> é um método usado para percorrer listas (como as que vêm do <code>querySelectorAll</code>). Para cada botão, ele executa uma função.</p>
+    <p class="explicacao">👉 <strong>addEventListener</strong> é usado para reagir a eventos. Neste caso, estamos ouvindo o evento "click" em cada botão.</p>
+    <p class="explicacao">👉 Quando o botão for clicado, a função dentro do <code>addEventListener</code> será executada.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>❌ 3. Desmarcando o Botão Anterior</h2>
+    <pre>
+- Dentro do clique:
+
+
+<div class="image">
+  <img src="./img/exe2querry1.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>querySelector</strong> retorna o primeiro elemento que possui a classe informada. Aqui, ele pega o botão que está atualmente com a classe ativa.</p>
+    <p class="explicacao">👉 Usamos <code>classList.remove()</code> para tirar a classe "selecionado" dele. Repare que não usamos o ponto (.) antes do nome da classe, pois estamos nos referindo à classe em si, e não ao seletor.</p>
+    <p class="explicacao">👉 Quando falamos de seletores, temos sempre o ponto (.) na frente; quando falamos de classes, não usamos o ponto.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>✅ 4. Marcando o Novo Botão</h2>
+    <pre>
+- Adicione a classe "selecionado" no botão que foi clicado.
+
+
+<div class="image">
+  <img src="./img/exe2classadd1.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 O botão clicado está representado pelo parâmetro <code>botao</code>. Ao usar <code>classList.add</code>, ele ganha o estilo visual de selecionado.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🧼 5. Escondendo a Imagem Atual</h2>
+    <pre>
+- Selecione a imagem atual que está com a classe "ativa"
+
+
+<div class="image">
+  <img src="./img/exe2querry2.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 Assim como fizemos com os botões, removemos a classe da imagem atual, que está sendo exibida.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>👁️ 6. Mostrando a Imagem Certa</h2>
+    <pre>
+- Use o índice do botão clicado para acessar a imagem correspondente
+
+
+<div class="image">
+  <img src="./img/exe2classadd2.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 A imagem correta está na mesma posição (índice) que o botão clicado.</p>
+    <p class="explicacao" style="margin-bottom: 60px">👉 Assim, usamos <code>imagens[indice]</code> para pegar a imagem certa e <code>classList.add('ativa')</code> para exibi-la.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./projeto2.html">Voltar</a>
+    </button>
+    <button class="circle"><a href="./index.html">01</a></button>
+    <button class="circle"><a href="./projeto2.html">02</a></button>
+    <button class="circle"><a href="./projeto3.html">03</a></button>
+    <button class="circle"><a href="./projeto4.html">04</a></button>
+    <button class="circle"><a href="./projeto5.html">05</a></button>
+    <button class="circle"><a href="./projeto6.html">06</a></button>
+    <button class="circle"><a href="./projeto7.html">07</a></button>
+    <button class="circle"><a href="./projeto8.html">08</a></button>
+    <button class="circle"><a href="./projeto9.html">09</a></button>
+    <button class="circle"><a href="./projeto10.html">10</a></button>
+    <button class="circle"><a href="./projeto11.html">11</a></button>
+    <button class="circle"><a href="./projeto12.html">12</a></button>
+    <button class="circle"><a href="./projeto13.html">13</a></button>
+    <button class="circle"><a href="./projeto14.html">14</a></button>
+    <button class="circle"><a href="./projeto15.html">15</a></button>
+    <button class="avancar">
+      <a href="./projeto4.html">Avançar</a>
+    </button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

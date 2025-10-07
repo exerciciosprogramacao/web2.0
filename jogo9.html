@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="./jogo9.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+  <div class="btt">
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+<h1 class="tit">📘 Documentação do Projeto - Clicker </h1>
+<div class="image">
+  <img src="./img/gengar.PNG" alt="">
+</div>
+  <div class="bloco">
+    <h2>🎯 Objetivo do Jogo</h2>
+    <pre>
+  - Clique na imagem para ganhar moedas.
+  - Use as moedas para comprar melhorias:
+    • Mais moedas por clique
+    • Mais moedas por segundo
+    </pre>
+    <p class="explicacao">👉 Um jogo simples onde o jogador evolui clicando e comprando upgrades.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🧱 1. Selecionando os Elementos da Página</h2>
+    <pre>
+  const imagem = document.querySelector('.meio .imagem img');
+  const contador = document.querySelector('.contador');
+  const contadorSegundos = document.querySelector('.segundos');
+  const cliques = document.querySelector('.clique');
+    </pre>
+    <p class="explicacao">👉 Esses comandos pegam os elementos HTML que serão atualizados no jogo.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>⚙️ 2. Criando Variáveis Iniciais</h2>
+    <pre>
+  let numeroCliques = 1;
+  let numeroSegundos = 0;
+  let moedas = 0;
+    </pre>
+    <p class="explicacao">👉 Variáveis para controlar cliques, produção automática e total de moedas.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🔄 3. Atualizando os Valores na Tela</h2>
+    <pre>
+  contador.innerText = "Moedas: " + moedas;
+  cliques.innerText = "Cliques: " + numeroCliques;
+    </pre>
+    <p class="explicacao">👉 Exibe as moedas e o valor de cada clique logo ao iniciar o jogo.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>👆 4. Clicando na Imagem = Ganha Moedas</h2>
+    <pre>
+  imagem.addEventListener('click', function() {
+    moedas += numeroCliques;
+    contador.innerText = "Moedas: " + moedas;
+    this.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+      this.style.transform = 'scale(1)';
+    }, 20);
+  });
+    </pre>
+    <p class="explicacao">👉 Ao clicar, ganha moedas e a imagem faz uma animação de zoom rápido.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🛒 5. Upgrades por Clique</h2>
+    <pre>
+  function botaoc1(){
+    if(moedas >= 50){
+      moedas -= 50;
+      numeroCliques++;
+      contador.innerText = "Moedas: " + moedas;
+      cliques.innerText = "Cliques: " + numeroCliques;
+    }
+  }
+  // ... igual para botaoc2 até botaoc5
+    </pre>
+    <p class="explicacao">👉 Cada botão aumenta o valor do clique se você tiver moedas suficientes.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>⏱️ 6. Upgrades por Segundo</h2>
+    <pre>
+  function botaos1(){
+    if(moedas >= 100){
+      moedas -= 100;
+      numeroSegundos++;
+      contador.innerText = "Moedas: " + moedas;
+      contadorSegundos.innerText = "Segundos: " + numeroSegundos;
+    }
+  }
+  // ... igual para botaos2 até botaos5
+    </pre>
+    <p class="explicacao">👉 Permite ganhar moedas automaticamente sem precisar clicar.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>⏲️ 7. Timer Automático</h2>
+    <pre>
+  setInterval(function() {
+    moedas += numeroSegundos;
+    contador.innerText = "Moedas: " + moedas;
+    contadorSegundos.innerText = "Segundos: " + numeroSegundos;
+  }, 1000);
+    </pre>
+    <p class="explicacao">👉 A cada segundo, o jogo adiciona moedas com base nos upgrades automáticos.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🔘 8. Ligando os Botões</h2>
+    <pre>
+  document.getElementById('btc1').onclick = botaoc1;
+  // ... btc2 a btc5
+  // ... bts1 a bts5
+    </pre>
+    <p class="explicacao">👉 Conecta os botões HTML com as funções de upgrade do JavaScript.</p>
+  </div>
+  
+  
+  
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./jogo8.html">Voltar</a>
+  </button>
+    <button class="avancar">
+      <a href="./jogo10.html">Avançar</a>
+  </button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
