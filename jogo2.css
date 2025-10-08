@@ -76,6 +76,10 @@ button {
   img {
     max-width: 300px;
   }
+
+  h2{
+    font-size: 17px;
+  }
 }
 
 /* ======== NOVO TEMA CYBERPUNK ========  */
