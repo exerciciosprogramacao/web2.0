@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Exercícios</title>
+ <link rel="stylesheet" href="projeto9.css"> 
+ <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+
+  <div class="btt">
+    <button class="avancar">💰 25</button>
+    <button class="circle"><a href="./index.html">01</a></button>
+    <button class="circle"><a href="./projeto2.html">02</a></button>
+    <button class="circle"><a href="./projeto3.html">03</a></button>
+    <button class="circle"><a href="./projeto4.html">04</a></button>
+    <button class="circle"><a href="./projeto5.html">05</a></button>
+    <button class="circle"><a href="./projeto6.html">06</a></button>
+    <button class="circle"><a href="./projeto7.html">07</a></button>
+    <button class="circle"><a href="./projeto8.html">08</a></button>
+    <button class="circle"><a href="./projeto9.html">09</a></button>
+    <button class="circle"><a href="./projeto10.html">10</a></button>
+    <button class="circle"><a href="./projeto11.html">11</a></button>
+    <button class="circle"><a href="./projeto12.html">12</a></button>
+    <button class="circle"><a href="./projeto13.html">13</a></button>
+    <button class="circle"><a href="./projeto14.html">14</a></button>
+    <button class="circle"><a href="./projeto15.html">15</a></button>
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+
+  <h1>Calculadora Refatorada</h1>
+
+  <div class="image">
+    <img src="./img/calculadoraRefatorada.PNG">
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo do Projeto</h2>
+    <pre>
+- Refatorar a programação da calculadora, ou seja, melhorar o código, diminuindo a quantidade de linhas e ganhando desempenho.
+- Utilizar querySelectorAll, forEach e addEventListener.
+    </pre>
+  </div>
+  
+  <div class="bloco">
+    <h2>📃 Dicas</h2>
+    <p class="explicacao">👉 Precisamos que todos os botões <strong>menos o botão de apagar e o de igual</strong> tenham a mesma classe. Cuidado com o CSS — uma solução é usar ID no CSS com o seletor #.</p>
+    <p class="explicacao">👉 Você já aprendeu tudo o que precisa...</p>
+    <p class="explicacao">👉 Precisamos usar o querySelectorAll para pegar todos os botões com a classe escolhida e passar essa NodeList para uma variável.</p>
+    <p class="explicacao">👉 Nessa variável usamos um forEach com arrow function e um parâmetro.</p>
+    <p class="explicacao">👉 Dentro do forEach — ou seja, para cada botão — teremos um addEventListener que escutará o clique do mouse.</p>
+    <p class="explicacao">👉 Dentro da função que utiliza o clique, temos que usar o parâmetro para passar para o display o valor dos botões clicados, usando innerText.</p>
+    <p class="explicacao">👉 Fora dessas duas arrow functions, teremos apenas o mapeamento dos IDs de apagar e de igual, e também uma função para cada um desses dois botões. Você pode copiar esta parte do projeto antigo — é a mesma programação.</p>
+    <p class="explicacao" style="margin-bottom: 60px">👉 Como resultado, teremos, contando as linhas em branco, cerca de 24 linhas de código.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./projeto8.html">Voltar</a>
+    </button>
+    <button class="circle"><a href="./index.html">01</a></button>
+    <button class="circle"><a href="./projeto2.html">02</a></button>
+    <button class="circle"><a href="./projeto3.html">03</a></button>
+    <button class="circle"><a href="./projeto4.html">04</a></button>
+    <button class="circle"><a href="./projeto5.html">05</a></button>
+    <button class="circle"><a href="./projeto6.html">06</a></button>
+    <button class="circle"><a href="./projeto7.html">07</a></button>
+    <button class="circle"><a href="./projeto8.html">08</a></button>
+    <button class="circle"><a href="./projeto9.html">09</a></button>
+    <button class="circle"><a href="./projeto10.html">10</a></button>
+    <button class="circle"><a href="./projeto11.html">11</a></button>
+    <button class="circle"><a href="./projeto12.html">12</a></button>
+    <button class="circle"><a href="./projeto13.html">13</a></button>
+    <button class="circle"><a href="./projeto14.html">14</a></button>
+    <button class="circle"><a href="./projeto15.html">15</a></button>
+
+    <button class="avancar">
+      <a href="./projeto10.html">Avançar</a>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
