@@ -90,7 +90,7 @@ Os dados devem ser salvos no navegador localStorage para que não se percam ao r
     especiais para converter nossos dados.</p>
    <p class="explicacao">👉 let registrosDePonto é um array e serve para armazenar todos os objetos de ponto.</p>
  <p class="explicacao">👉 Esta programação é crucial. Ela verifica se já existem dados salvos no localStorage do
-  navegador. Se houver, ela os carrega; se não, ela inicia um array vazio \[ \].</p>
+  navegador. Se houver, ela os carrega; se não, ela inicia um array vazio [ ].</p>
  <p class="explicacao">👉 O localStorage só consegue armazenar texto (strings). O nosso array de registros, no
   entanto, é um conjunto de objetos de JavaScript. Para isso temos que usar o JSON.parse().</p>
  <p class="explicacao">👉 JSON.parse() é uma função que faz o trabalho de converter uma string de texto (que foi
@@ -103,9 +103,9 @@ Os dados devem ser salvos no navegador localStorage para que não se percam ao r
  <p class="explicacao">👉 Repare que: temos dois registrosDePonto, um na cor branca e um na cor amarela. O que está de branco será sempre a referência à 👉 variável, e o que está em amarelo é referente à 👉 key.</p>
  <p class="explicacao">👉 Se a chave não existir (por exemplo, na primeira vez que o usuário acessa a página), o
   método retorna null.</p>
- <p class="explicacao">👉 || \[ \] Este é o operador lógico "OU". Ele funciona como uma "válvula de segurança".</p>
+ <p class="explicacao">👉 || [ ] Este é o operador lógico "OU". Ele funciona como uma "válvula de segurança".</p>
  <p class="explicacao">👉 O JavaScript avalia a expressão à esquerda, se essa expressão retornar um valor "falso" (como null, que é o caso quando não há dados
-  salvos), o operador || ignora o resultado e imediatamente retorna o valor à sua direita, que é \[\] (um array
+  salvos), o operador || ignora o resultado e imediatamente retorna o valor à sua direita, que é [ ] (um array
   vazio).</p>
  <p class="explicacao">👉 O que isso significa? Significa que, se não houver registros salvos, a variável
   salvelocal não ficará com o valor null, mas sim com um array vazio, evitando erros e permitindo que você
