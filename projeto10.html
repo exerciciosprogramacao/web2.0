@@ -33,7 +33,7 @@
   <h1> Relógio de Ponto</h1>
 
   <div class="image">
-    <img src="./img/relogioPonto.PNG" alt="" style="max-width: 500px;">
+    <img src="./img/relogioPonto.PNG" alt="">
   </div>
 
   <div class="bloco">
@@ -49,7 +49,7 @@
 
   <div class="bloco">
     <h2>🧱 Estrutura HTML</h2>
-    <p class="explicacao">👇 Primeiro, vamos construir o HTML. O código abaixo cria o título, o campo para o nome e
+    <p class="explicacao">👉 Primeiro, vamos construir o HTML. O código abaixo cria o título, o campo para o nome e
       os botões de controle.</p>
     <pre>
   <div class="image">
@@ -62,7 +62,7 @@
   <div class="bloco">
 
     <h2>🧩 1. Mapeamento dos Elementos no JavaScript</h2>
-    <p class="explicacao">👇 Para o JavaScript "enxergar" os elementos que criamos no HTML, precisamos mapeá-los, ou
+    <p class="explicacao">👉 Para o JavaScript "enxergar" os elementos que criamos no HTML, precisamos mapeá-los, ou
       seja, guardar cada um em uma variável. Usamos document.getElementById para isso.</p>
     <pre>
   <div class="image">
@@ -76,10 +76,10 @@
 
   <div class="bloco">
     <h2>💾 2. Criando o localStorage</h2>
-    <p class="explicacao">👇 O localStorage é como uma "memória" do seu navegador. Ele permite que os dados
+    <p class="explicacao">👉 O localStorage é como uma "memória" do seu navegador. Ele permite que os dados
       persistam mesmo depois que você fecha a página. Mas ele só armazena texto, então precisamos de duas funções
       especiais para converter nossos dados.</p>
-    <p class="explicacao">👇 let <strong>registrosDePonto</strong> é um array e serve para armazenar todos os objetos de ponto.</p>
+    <p class="explicacao">👉 let <strong>registrosDePonto</strong> é um array e serve para armazenar todos os objetos de ponto.</p>
     
     <pre>
   <div class="image">
@@ -88,36 +88,33 @@
 </pre>
     <p class="explicacao">👉 Esta programação é crucial. Ela verifica se já existem dados salvos no localStorage do
       navegador. Se houver, ela os carrega; se não, ela inicia um array vazio [ ].</p>
-    <p class="explicacao">🔮 O localStorage só consegue armazenar texto (strings). O nosso array de registros, no
+    <p class="explicacao">👉 O localStorage só consegue armazenar texto (strings). O nosso array de registros, no
       entanto, é um conjunto de objetos de JavaScript. Para isso temos que usar o JSON.parse().</p>
-    <p class="explicacao">🔮 JSON.parse() é uma função que faz o trabalho de converter uma string de texto (que foi
+    <p class="explicacao">👉 JSON.parse() é uma função que faz o trabalho de converter uma string de texto (que foi
       salva no localStorage) de volta para um objeto ou array de JavaScript, para que possamos manipulá-lo
       novamente.</p>
-    <p class="explicacao">🔮 Se algo dentro do <strong>getItem</strong> existir, o método retorna o
+    <p class="explicacao">👉 Se algo dentro do <strong>getItem</strong> existir, o método retorna o
       seu valor (que é sempre uma string).</p>
     <p class="explicacao"><strong>👉 registrosDePonto </strong> não é uma variável e sim o que chamamos de <strong>key "chave"</strong>. Essa key é
       o nome que damos para identificar o que será salvo.</p>
-    <p class="explicacao">🔮 Repare que: temos dois registrosDePonto um na cor branca e um na cor amarela. O que está de branco será sempre a referência a 👉variável, em amarelo é referente a 👉key</p>
-    <p class="explicacao">🔮 Se a <strong>chave</strong> não existir (por exemplo, na primeira vez que o usuário acessa a página), o
+    <p class="explicacao">👉 Repare que: temos dois registrosDePonto um na cor branca e um na cor amarela. O que está de branco será sempre a referência a 👉variável, em amarelo é referente a 👉key</p>
+    <p class="explicacao">👉 Se a <strong>chave</strong> não existir (por exemplo, na primeira vez que o usuário acessa a página), o
       método retorna null.</p>
     <p class="explicacao">👉 || [ ] Este é o operador lógico "OU". Ele funciona como uma "válvula de segurança".</p>
-    <p class="explicacao">🔮 O JavaScript avalia a expressão à esquerda:
-      JSON.parse(localStorage.getItem('salvelocal')).</p>
-    <p class="explicacao">🔮 Se essa expressão retornar um valor "falso" (como null, que é o caso quando não há dados
+    <p class="explicacao">👉 O JavaScript avalia a expressão à esquerda, se essa expressão retornar um valor "falso" (como null, que é o caso quando não há dados
       salvos), o operador || ignora o resultado e imediatamente retorna o valor à sua direita, que é [] (um array
       vazio).</p>
-    <p class="explicacao">🔮 O que isso significa? Significa que, se não houver registros salvos, a variável
+    <p class="explicacao">👉 O que isso significa? Significa que, se não houver registros salvos, a variável
       salvelocal não ficará com o valor null, mas sim com um array vazio, evitando erros e permitindo que você
       adicione novos registros sem problemas.</p>
-    <p class="explicacao">👉 Resumindo, a linha <strong>let registrosDePonto = JSON.parse(localStorage.getItem('registrosDePonto')) || [ ];</strong> tenta
-      carregar os dados salvos e, se não encontrar nada, inicia um array vazio, pronto para ser usado!</p>
+    <p class="explicacao">👉 Resumindo, a linha 9 tenta carregar os dados salvos e, se não encontrar nada, inicia um array vazio, pronto para ser usado!</p>
   </div>
 
   <div class="bloco">
     <h2>🖱️ 3. Conectando os Botões aos Eventos</h2>
-    <p class="explicacao">👇A execução do projeto começa quando "ouvimos" os cliques nos botões e dizemos ao
+    <p class="explicacao">👉A execução do projeto começa quando "ouvimos" os cliques nos botões e dizemos ao
       JavaScript qual função ele deve executar.</p>
-      <p class="explicacao">🔮 Repare que: dentro das funções dos botões temos, em amarelo, parâmetros sendo passados para as funções.</p>
+      <p class="explicacao">👉 Repare que: dentro das funções dos botões temos, em amarelo, parâmetros sendo passados para as funções.</p>
     <pre>
   <div class="image">
     <img src="./imgtutor/evento de clique.PNG" alt="">
@@ -137,15 +134,15 @@
 
   <div class="bloco">
     <h2>📝 4. Classe Ponto e Construtor do objeto</h2>
-    <p class="explicacao">👇 Uma classe é um modelo ou molde para criar objetos com características e comportamentos
+    <p class="explicacao">👉 Uma classe é um modelo ou molde para criar objetos com características e comportamentos
       semelhantes. Para organizar nossos dados, vamos criar uma class chamada Ponto. Pense nela como uma "fábrica"
       que cria objetos com a mesma estrutura. Cada objeto Ponto terá o nome de uma pessoa e um lugar para guardar
       os horários.</p>
 
-    <p class="explicacao">👇 Não esqueça que estamos falando de horários "Pontualidade" e não de pontuação. Por isso
+    <p class="explicacao">👉 Não esqueça que estamos falando de horários "Pontualidade" e não de pontuação. Por isso
       o nome Ponto na classe.</p>
 
-    <p class="explicacao">👇 A função constructor é executada quando um novo Ponto é criado. Ela recebe o
+    <p class="explicacao">👉 A função constructor é executada quando um novo Ponto é criado. Ela recebe o
       <strong>nome</strong> como parâmetro e já prepara os espaços para os horários.
     </p>
   <pre>
@@ -181,9 +178,7 @@
   </div> 
 </pre>
     <p class="explicacao">
-      👉 Na função salvarRegistros() o JSON.stringify(registrosDePonto) transforma o array de objetos em uma <strong>string de
-        texto</strong> no formato JSON, pois o localStorage só consegue guardar texto.
-      localStorage.setItem('registrosDePonto') guarda essa string na "key" chamada registrosDePonto (essa é a
+      👉 Na função salvarRegistros() o JSON.stringify(registrosDePonto) transforma o array de objetos em uma <strong>string de texto</strong> no formato JSON, pois o localStorage só consegue guardar texto, localStorage.setItem guarda essa string na "key" chamada registrosDePonto (essa é a
       chave, ou seja, o nome que usamos para identificar esse dado). Depois, sempre que precisarmos acessar os
       dados salvos, usamos essa mesma chave.
     </p>
@@ -231,7 +226,7 @@
 
   <div class="bloco">
     <h2>🎰 7. Função principal para registrar ponto</h2>
-    <p class="explicacao">👇<strong> A função abaixo</strong> é a mais importante de todas.</p>
+    <p class="explicacao">👉<strong> A função abaixo</strong> é a mais importante de todas.</p>
 <pre class="pre">
   <div class="image">
     <img src="./imgtutor/registrar ponto.PNG" alt="">
@@ -265,7 +260,7 @@
     <img src="./imgtutor/chamadaatualizarinterface.PNG" alt="">
   </div> 
 </pre>
-      <p class="explicacao">👉 Chamamos a função atualizarInterface fora de tudo, para que quando iniciar a pagina já mostrar tudo que existe no localStorage</p>
+<p class="explicacao" style="margin-bottom: 60px">👉 Chamamos a função atualizarInterface fora de tudo, para que quando iniciar a pagina já mostrar tudo que existe no localStorage</p>
 
     </div>
 
