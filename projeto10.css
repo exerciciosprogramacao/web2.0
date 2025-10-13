@@ -129,11 +129,6 @@ pre{
   justify-content: center;
 }
 
-.image2{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 .imagedupla{
   max-width: 800px;
   max-height: 800px;
@@ -180,6 +175,7 @@ button {
     margin-top: 10px;
 
   }
+
   h2{
     font-size: 17px;
   }
@@ -283,6 +279,3 @@ body.cyberpunk .download:hover {
   border: 1px solid  #FCFF39;
   box-shadow: 0 0 15px #FCFF39;
 } */
-
-
-
