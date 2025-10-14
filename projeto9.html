@@ -10,23 +10,27 @@
 <body>
 
   <div class="btt">
-    <button class="avancar">💰 25</button>
-    <button class="circle"><a href="./index.html">01</a></button>
-    <button class="circle"><a href="./projeto2.html">02</a></button>
-    <button class="circle"><a href="./projeto3.html">03</a></button>
-    <button class="circle"><a href="./projeto4.html">04</a></button>
-    <button class="circle"><a href="./projeto5.html">05</a></button>
-    <button class="circle"><a href="./projeto6.html">06</a></button>
-    <button class="circle"><a href="./projeto7.html">07</a></button>
-    <button class="circle"><a href="./projeto8.html">08</a></button>
-    <button class="circle"><a href="./projeto9.html">09</a></button>
-    <button class="circle"><a href="./projeto10.html">10</a></button>
-    <button class="circle"><a href="./projeto11.html">11</a></button>
-    <button class="circle"><a href="./projeto12.html">12</a></button>
-    <button class="circle"><a href="./projeto13.html">13</a></button>
-    <button class="circle"><a href="./projeto14.html">14</a></button>
-    <button class="circle"><a href="./projeto15.html">15</a></button>
-    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    <div class="circle-buttons" style="margin-bottom: 20px;">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons">
+      <button class="avancar">💰 25</button>
+      <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    </div>
   </div>
 
   <h1>Calculadora Refatorada</h1>
@@ -52,32 +56,36 @@
     <p class="explicacao">👉 Dentro do forEach — ou seja, para cada botão — teremos um addEventListener que escutará o clique do mouse.</p>
     <p class="explicacao">👉 Dentro da função que utiliza o clique, temos que usar o parâmetro para passar para o display o valor dos botões clicados, usando innerText.</p>
     <p class="explicacao">👉 Fora dessas duas arrow functions, teremos apenas o mapeamento dos IDs de apagar e de igual, e também uma função para cada um desses dois botões. Você pode copiar esta parte do projeto antigo — é a mesma programação.</p>
-    <p class="explicacao" style="margin-bottom: 60px">👉 Como resultado, teremos, contando as linhas em branco, cerca de 24 linhas de código.</p>
+    <p class="explicacao" style="margin-bottom: 30px">👉 Como resultado, teremos, contando as linhas em branco, cerca de 24 linhas de código.</p>
   </div>
 
-  <div class="bt">
-    <button class="voltar">
+  <div class="btt">
+    <div class="circle-buttons">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons" style="margin-top: 20px;">
+      <button class="voltar">
       <a href="./projeto8.html">Voltar</a>
-    </button>
-    <button class="circle"><a href="./index.html">01</a></button>
-    <button class="circle"><a href="./projeto2.html">02</a></button>
-    <button class="circle"><a href="./projeto3.html">03</a></button>
-    <button class="circle"><a href="./projeto4.html">04</a></button>
-    <button class="circle"><a href="./projeto5.html">05</a></button>
-    <button class="circle"><a href="./projeto6.html">06</a></button>
-    <button class="circle"><a href="./projeto7.html">07</a></button>
-    <button class="circle"><a href="./projeto8.html">08</a></button>
-    <button class="circle"><a href="./projeto9.html">09</a></button>
-    <button class="circle"><a href="./projeto10.html">10</a></button>
-    <button class="circle"><a href="./projeto11.html">11</a></button>
-    <button class="circle"><a href="./projeto12.html">12</a></button>
-    <button class="circle"><a href="./projeto13.html">13</a></button>
-    <button class="circle"><a href="./projeto14.html">14</a></button>
-    <button class="circle"><a href="./projeto15.html">15</a></button>
+      </button>
 
-    <button class="avancar">
-      <a href="./projeto10.html">Avançar</a>
-    </button>
+      <button class="avancar">
+        <a href="./projeto10.html">Avançar</a>
+      </button>
+    </div> 
   </div>
 
   <script src="script.js"></script>

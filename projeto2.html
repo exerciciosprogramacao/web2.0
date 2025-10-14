@@ -8,42 +8,52 @@
  <link rel="icon" type="image/png" href="./img/logo.png">
 </head>
 <body>
- <div class="btt">
-  <button class="avancar">💰 15</button>
-  <button class="circle"><a href="./index.html">01</a></button>
-  <button class="circle"><a href="./projeto2.html">02</a></button>
-  <button class="circle"><a href="./projeto3.html">03</a></button>
-  <button class="circle"><a href="./projeto4.html">04</a></button>
-  <button class="circle"><a href="./projeto5.html">05</a></button>
-  <button class="circle"><a href="./projeto6.html">06</a></button>
-  <button class="circle"><a href="./projeto7.html">07</a></button>
-  <button class="circle"><a href="./projeto8.html">08</a></button>
-  <button class="circle"><a href="./projeto9.html">09</a></button>
-  <button class="circle"><a href="./projeto10.html">10</a></button>
-  <button class="circle"><a href="./projeto11.html">11</a></button>
-  <button class="circle"><a href="./projeto12.html">12</a></button>
-  <button class="circle"><a href="./projeto13.html">13</a></button>
-  <button class="circle"><a href="./projeto14.html">14</a></button>
-  <button class="circle"><a href="./projeto15.html">15</a></button>
-  <button class="avancar" onclick="toggleDarkMode()">👓</button>
- </div>
+  <div class="btt">
+    <div class="circle-buttons" style="margin-bottom: 20px;">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons">
+      <button class="avancar">💰 15</button>
+      <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    </div>
+  </div>
  
  <h1> Simulação de Cadastro e Login</h1>
  <div class="imagedupla">
   <img src="./img/loginsimpleslogo1.PNG" style="height: 450px;" alt="">
   <img src="./img/loginsimpleslogo2.1.PNG" style="height: 450px;" alt="">
 </div>
+
  <div class="bloco">
-  <h2>🎯 Objetivo</h2>
-  <pre>
+  <h2>🎯 Objetivo do Projeto</h2>
+  
+<pre>
 - Simular um cadastro simples, salvando Nome e Idade em elementos de exibição, uma "tabela".
 - Implementar uma função de "login" que verifica se os dados digitados batem com os dados salvos.
 - Focar na manipulação do conteúdo de elementos innerText e value.
-  </pre>
+
+</pre>
+
   <p class="explicacao">👉 Este projeto é um exercício prático de leitura e escrita de dados no DOM, utilizando inputs e elementos de texto para armazenar e validar informações.</p>
   <p class="explicacao">👉 Crie todo HTML e CSS, independente de como você for fazer, tenha em mente que você deve obter o mesmo resultado das imagens de exemplos.</p>
   <p class="explicacao">👉 Usaremos 6 id ao todo, 1 em cada input, 1 para cada botão e 1 em cada uma das duas td.</p>
+
 </div>
+
  <div class="bloco">
   <h2>🖱️ 1. Atribuindo Eventos aos Botões</h2>
   <pre>
@@ -106,14 +116,12 @@
   <p class="explicacao">👉 No exercício anterior você aprendeu outras duas funções, além dessa usada nesse projeto.</p>
   <p class="explicacao">👉 <code>addEventListener</code> e <code>addEventListener</code> com <code>arrowFunction</code>.</p>
   <p class="explicacao">👉 Use uma para a função adicionar e outra para a função de verificar.</p>
-  <p class="explicacao" style="margin-bottom: 60px">💰 Este desafio vale 10 moedas.</p>
+  <p class="explicacao" style="margin-bottom: 30px">💰 Este desafio vale 10 moedas.</p>
 </div>
 
- <div class="bt">
-  <button class="voltar">
-   <a href="./index.html">Voltar</a>
- </button>
- <button class="circle"><a href="./index.html">01</a></button>
+<div class="btt">
+  <div class="circle-buttons">
+    <button class="circle"><a href="./index.html">01</a></button>
     <button class="circle"><a href="./projeto2.html">02</a></button>
     <button class="circle"><a href="./projeto3.html">03</a></button>
     <button class="circle"><a href="./projeto4.html">04</a></button>
@@ -128,10 +136,18 @@
     <button class="circle"><a href="./projeto13.html">13</a></button>
     <button class="circle"><a href="./projeto14.html">14</a></button>
     <button class="circle"><a href="./projeto15.html">15</a></button>
-  <button class="avancar">
-   <a href="./projeto3.html">Avançar</a>
- </button>
- </div>
+  </div>
+  <div class="top-buttons" style="margin-top: 20px;">
+    <button class="voltar">
+    <a href="./index.html">Voltar</a>
+    </button>
+
+    <button class="avancar">
+      <a href="./projeto3.html">Avançar</a>
+    </button>
+  </div>
+  
+</div>
  <script src="./script.js"></script>
 </body>
 </html>

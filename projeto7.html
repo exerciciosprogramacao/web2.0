@@ -10,23 +10,27 @@
 <body>
 
   <div class="btt">
-    <button class="avancar">💰 35</button>
-  <button class="circle"><a href="./index.html">01</a></button>
-  <button class="circle"><a href="./projeto2.html">02</a></button>
-  <button class="circle"><a href="./projeto3.html">03</a></button>
-  <button class="circle"><a href="./projeto4.html">04</a></button>
-  <button class="circle"><a href="./projeto5.html">05</a></button>
-  <button class="circle"><a href="./projeto6.html">06</a></button>
-  <button class="circle"><a href="./projeto7.html">07</a></button>
-  <button class="circle"><a href="./projeto8.html">08</a></button>
-  <button class="circle"><a href="./projeto9.html">09</a></button>
-  <button class="circle"><a href="./projeto10.html">10</a></button>
-  <button class="circle"><a href="./projeto11.html">11</a></button>
-  <button class="circle"><a href="./projeto12.html">12</a></button>
-  <button class="circle"><a href="./projeto13.html">13</a></button>
-  <button class="circle"><a href="./projeto14.html">14</a></button>
-  <button class="circle"><a href="./projeto15.html">15</a></button>
-  <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    <div class="circle-buttons" style="margin-bottom: 20px;">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons">
+      <button class="avancar">💰 35</button>
+      <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    </div>
   </div>
 
  <h1>Pokédex API</h1>
@@ -109,7 +113,7 @@ Após isso, uma pasta vai ser criada com todos os arquivos.
   </pre>
   <button class="accordion">Explicação detalhada</button>
   <div class="panel">
-  <p class="explicacao">👉 Declaração de uma função chamada createCard, que foi chamada na linha 15. Ela recebe um parâmetro chamado pokemon, que contém os dados detalhados de um Pokémon. 👉 <strong>podeData</strong> </p>
+<p class="explicacao">👉 Declaração de uma função chamada createCard, que foi chamada na linha 15. Ela recebe um parâmetro chamado pokemon, que contém os dados detalhados de um Pokémon. </p>
 <p class="explicacao">👉 A variável card é declarada e armazena um novo elemento HTML div, criado dinamicamente com a função JavaScript document.createElement("div").</p>
 <p class="explicacao">👉 Adiciona a classe CSS &quot;card&quot; ao elemento div recém-criado, usando a propriedade classList.add( ).</p>
 <p class="explicacao">👉 A variável sprite é declarada. Ela tenta obter a URL da imagem de arte oficial do Pokémon em primeiro lugar (pokemon.sprites.other[&quot;official-artwork&quot;].front_default). Se essa URL não existir (o que é indicado pelo operador OR lógico ||), ela usa a sprite frontal padrão (pokemon.sprites.front_default) como alternativa.</p>
@@ -175,32 +179,37 @@ Isso faz com que a próxima chamada busque os Pokémon a partir do #151 até  #3
   <p class="explicacao">👉 Exemplo: function createCard(randomUser).</p>
   <p class="explicacao">👉 const sprite = user.picture.large.</p>
   <p class="explicacao">👉 Altere o css para que tudo fique organizado.</p>
-  <p class="explicacao" style="margin-bottom: 60px">💰 Este desafio vale 10 moedas.</p>
+  <p class="explicacao" style="margin-bottom: 30px">💰 Este desafio vale 10 moedas.</p>
 </div>
  
- <div class="bt">
-  <button class="voltar">
-    <a href="./jogo6.html">Voltar</a>
-  </button>
-  <button class="circle"><a href="./index.html">01</a></button>
-  <button class="circle"><a href="./projeto2.html">02</a></button>
-  <button class="circle"><a href="./projeto3.html">03</a></button>
-  <button class="circle"><a href="./projeto4.html">04</a></button>
-  <button class="circle"><a href="./projeto5.html">05</a></button>
-  <button class="circle"><a href="./projeto6.html">06</a></button>
-  <button class="circle"><a href="./projeto7.html">07</a></button>
-  <button class="circle"><a href="./projeto8.html">08</a></button>
-  <button class="circle"><a href="./projeto9.html">09</a></button>
-  <button class="circle"><a href="./projeto10.html">10</a></button>
-  <button class="circle"><a href="./projeto11.html">11</a></button>
-  <button class="circle"><a href="./projeto12.html">12</a></button>
-  <button class="circle"><a href="./projeto13.html">13</a></button>
-  <button class="circle"><a href="./projeto14.html">14</a></button>
-  <button class="circle"><a href="./projeto15.html">15</a></button>
-  <button class="avancar">
-    <a href="./projeto8.html">Avançar</a>
-  </button>
- </div>
+<div class="btt">
+  <div class="circle-buttons">
+    <button class="circle"><a href="./index.html">01</a></button>
+    <button class="circle"><a href="./projeto2.html">02</a></button>
+    <button class="circle"><a href="./projeto3.html">03</a></button>
+    <button class="circle"><a href="./projeto4.html">04</a></button>
+    <button class="circle"><a href="./projeto5.html">05</a></button>
+    <button class="circle"><a href="./projeto6.html">06</a></button>
+    <button class="circle"><a href="./projeto7.html">07</a></button>
+    <button class="circle"><a href="./projeto8.html">08</a></button>
+    <button class="circle"><a href="./projeto9.html">09</a></button>
+    <button class="circle"><a href="./projeto10.html">10</a></button>
+    <button class="circle"><a href="./projeto11.html">11</a></button>
+    <button class="circle"><a href="./projeto12.html">12</a></button>
+    <button class="circle"><a href="./projeto13.html">13</a></button>
+    <button class="circle"><a href="./projeto14.html">14</a></button>
+    <button class="circle"><a href="./projeto15.html">15</a></button>
+  </div>
+  <div class="top-buttons" style="margin-top: 20px;">
+    <button class="voltar">
+    <a href="./projeto6.html">Voltar</a>
+    </button>
+
+    <button class="avancar">
+      <a href="./projeto8.html">Avançar</a>
+    </button>
+  </div> 
+</div>
 
  <script src="script.js"></script>
 </body>

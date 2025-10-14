@@ -15,10 +15,24 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-
+//troca de modo escoro/claro
 function toggleDarkMode() {
   document.body.classList.toggle('cyberpunk');
 }
 
 
+//ativa e desativa a pagina pela url
+const paginaAtual = window.location.pathname.split("/").pop();
+const btProjetoAtivo = document.querySelectorAll(".circle a");
+
+btProjetoAtivo.forEach(link => {
+ 
+    const btAtivo = link.parentElement;
+    const enderecoLimpo = link.getAttribute("href").replace("./", "");
+    if(enderecoLimpo === paginaAtual){
+      btAtivo.classList.add("ativo")
+    }else{
+      btAtivo.classList.remove("ativo")
+    }
+});
 
