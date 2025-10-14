@@ -317,5 +317,8 @@ body.cyberpunk .download:hover {
   box-shadow: 0 0 15px #FCFF39;
 } */
 
+body.cyberpunk .circle.ativo{
+  background-color:#eee ;
 
+}
 
