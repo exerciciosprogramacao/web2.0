@@ -320,13 +320,15 @@ body.cyberpunk .download:hover {
   /* text-shadow: 0 0 5px #ff00ff; */
 }
 
+body.cyberpunk .circle.ativo{
+  background-color:#eee ;
+
+}
+
 /* body.cyberpunk img {
   border: 1px solid  #FCFF39;
   box-shadow: 0 0 15px #FCFF39;
 } */
 
-body.cyberpunk .circle.ativo{
-  background-color:#eee ;
 
-}
 
