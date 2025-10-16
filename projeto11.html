@@ -29,272 +29,101 @@
       <button class="circle"><a href="./projeto15.html">15</a></button>
     </div>
     <div class="top-buttons">
-      <button class="avancar">💰 25</button>
+      <button class="avancar">💰 20</button>
       <button class="avancar" onclick="toggleDarkMode()">👓</button>
     </div>
   </div>
-  
 
- <h1> Relógio de Ponto</h1>
-
- <div class="image">
-  <img src="./img/relogioPonto.PNG" style="max-height: 450px;" alt="">
- </div>
-
- <div class="bloco">
-  <h2>🎯 Objetivo do Projeto</h2>
-  <pre>
-Criar um sistema de registro de ponto usando HTML, CSS e conceitos de objetos e construtor em JavaScript.
-
-O sistema deve permitir que o usuário registre os horários de chegada, saída para almoço, retorno do almoço e saída final.
-
-Os dados devem ser salvos no navegador localStorage para que não se percam ao recarregar a página.
-  </pre>
- </div>
-
- <div class="bloco">
-  <h2>🧱 Estrutura HTML</h2>
-  
-  <pre>
- <div class="image">
-  <img src="./imgtutor/pontohtmlbody.PNG" alt="">
- </div>
-</pre>
-<p class="explicacao">👉 Primeiro, vamos construir o HTML. O código abaixo cria o título, o campo para o nome e
-  os botões de controle.</p>
-  <p class="explicacao">👉 A lista ul com o id="registros-lista" é onde os horários registrados vão aparecer.</p>
- </div>
-
- <div class="bloco">
-
-  <h2>🧩 1. Mapeamento dos Elementos no JavaScript</h2>
-  
-  <pre>
- <div class="image">
-  <img src="./imgtutor/Mapeamento dos Elementos no JavaScript.PNG" alt="">
- </div>
-</pre>
-<p class="explicacao">👉 Para o JavaScript "enxergar" os elementos que criamos no HTML, precisamos mapeá-los, ou
-  seja, guardar cada um em uma variável. Usamos document.getElementById para isso.</p>
-  <p class="explicacao">👉 Repare que estamos salvando a tag inteira na variável, e não seu valor ou seu texto.
-   Isso ocorre especificamente porque a variável precisa ser o elemento completo para que você possa interagir
-   com ele, seja para adicionar um evento, modificar seu estilo ou acessar suas propriedades.</p>
- </div>
-
- <div class="bloco">
-  <h2>💾 2. Criando o localStorage</h2>
-  <pre>
- <div class="image">
-  <img src="./imgtutor/localStorage.PNG" alt="">
- </div>
-</pre>
-<button class="accordion">Explicação detalhada</button>
-<div class="panel">
-  <p class="explicacao">👉 O localStorage é como uma "memória" do seu navegador. Ele permite que os dados
-    persistam mesmo depois que você fecha a página. Mas ele só armazena texto, então precisamos de duas funções
-    especiais para converter nossos dados.</p>
-   <p class="explicacao">👉 let registrosDePonto é um array e serve para armazenar todos os objetos de ponto.</p>
- <p class="explicacao">👉 Esta programação é crucial. Ela verifica se já existem dados salvos no localStorage do
-  navegador. Se houver, ela os carrega; se não, ela inicia um array vazio [ ].</p>
- <p class="explicacao">👉 O localStorage só consegue armazenar texto (strings). O nosso array de registros, no
-  entanto, é um conjunto de objetos de JavaScript. Para isso temos que usar o JSON.parse().</p>
- <p class="explicacao">👉 JSON.parse() é uma função que faz o trabalho de converter uma string de texto (que foi
-  salva no localStorage) de volta para um objeto ou array de JavaScript, para que possamos manipulá-lo
-  novamente.</p>
- <p class="explicacao">👉 Se algo dentro do getItem existir, o método retorna o
-  seu valor (que é sempre uma string).</p>
- <p class="explicacao">👉 registrosDePonto não é uma variável, e sim o que chamamos de key "chave". Essa key é
-  o nome que damos para identificar o que será salvo.</p>
- <p class="explicacao">👉 Repare que: temos dois registrosDePonto, um na cor branca e um na cor amarela. O que está de branco será sempre a referência à 👉 variável, e o que está em amarelo é referente à 👉 key.</p>
- <p class="explicacao">👉 Se a chave não existir (por exemplo, na primeira vez que o usuário acessa a página), o
-  método retorna null.</p>
- <p class="explicacao">👉 || [ ] Este é o operador lógico "OU". Ele funciona como uma "válvula de segurança".</p>
- <p class="explicacao">👉 O JavaScript avalia a expressão à esquerda, se essa expressão retornar um valor "falso" (como null, que é o caso quando não há dados
-  salvos), o operador || ignora o resultado e imediatamente retorna o valor à sua direita, que é [ ] (um array
-  vazio).</p>
- <p class="explicacao">👉 O que isso significa? Significa que, se não houver registros salvos, a variável
-  salvelocal não ficará com o valor null, mas sim com um array vazio, evitando erros e permitindo que você
-  adicione novos registros sem problemas.</p>
- 
+<h1 class="tit"> Clicker </h1>
+<div class="image">
+  <img src="./img/clickerlogo.PNG" alt="">
 </div>
-<p class="explicacao">👉<strong>Resumindo:</strong> a linha 9 tenta carregar os dados salvos e, se não encontrar nada, inicia um array vazio, pronto para ser usado!</p>
-
- </div>
-
- <div class="bloco">
-  <h2>🖱️ 3. Conectando os Botões aos Eventos</h2>
-  
-  <pre>
- <div class="image">
-  <img src="./imgtutor/evento de clique.PNG" alt="">
- </div>
-</pre>
-<button class="accordion">Explicação detalhada</button>
-<div class="panel">
-  <p class="explicacao">👉 A execução do projeto começa quando "ouvimos" os cliques nos botões e dizemos ao
-    JavaScript qual função ele deve executar.</p>
-    <p class="explicacao">👉 Repare que: dentro das funções dos botões temos, em amarelo, parâmetros sendo passados para as funções.</p>
-    <p class="explicacao">👉 O método addEventListener é usado para "escutar" um evento, como o click do mouse.
-     Quando o evento acontece, a função dentro dele registrarPonto é executada.</p>
-    <p class="explicacao">👉 Em const confirmar = confirm("...") criamos a variável e a mensagem de confirmação para
-     apagar os registros.</p>
-    <p class="explicacao">👉 No botão de resetar, usamos localStorage.removeItem(...) para apagar a chave de registro "Key"
-     do navegador, limpando completamente os dados.</p>
-    <p class="explicacao">👉 No if, basicamente o navegador mostra uma caixa de diálogo com dois botões: "OK" e
-     "Cancelar". O confirm retorna um valor booleano: true → se o usuário clicou em OK, false → se o usuário
-     clicou em Cancelar.</p>
-</div>
-   <p class="explicacao">👉<strong>Resumindo:</strong> reagimos aos cliques dos botões, chamando funções que podem receber parâmetros. O addEventListener dispara essas funções, confirm() mostra caixas de confirmação retornando verdadeiro ou falso, e localStorage.removeItem() apaga os dados do navegador quando necessário, como no botão de resetar.</p>
- </div>
-
- <div class="bloco">
-  <h2>📝 4. Classe Ponto e Construtor do objeto</h2>
-  
- <pre>
-   <div class="image">
-    <img src="./imgtutor/Classe Ponto e Construtor do objeto.PNG" alt="">
-   </div>
-</pre>
-<button class="accordion">Explicação detalhada</button>
-<div class="panel">
-  <p class="explicacao">👉 Uma classe é um modelo ou molde para criar objetos com características e comportamentos
-    semelhantes. Para organizar nossos dados, vamos criar uma class chamada Ponto. Pense nela como uma "fábrica"
-    que cria objetos com a mesma estrutura. Cada objeto Ponto terá o nome de uma pessoa e um lugar para guardar
-    os horários.</p>
-   <p class="explicacao">👉 Não esqueça que estamos falando de horários (pontualidade) e não de pontuação. Por isso
-    o nome Ponto na classe.</p>
-   <p class="explicacao">👉 A função constructor é executada quando um novo Ponto é criado. Ela recebe o
-    nome como parâmetro e já prepara os espaços para os horários.
-   </p>
-    <p class="explicacao">👉 O ponto e vírgula no fechamento da chave é necessário para finalizar a declaração do
-     construtor da classe.</p>
-    <p class="explicacao">👉 chegada: null, saidaAlmoco: null, retornoAlmoco: null, saida: null 👉 São chamadas de propriedades.</p>
-    <p class="explicacao">👉 O método registrarHora é o coração da nossa classe. Ele recebe o tipo de registro (por
-     exemplo, "chegada"). A linha this.registros.hasOwnProperty(tipo) é um método que verifica se um objeto
-     possui uma determinada propriedade. Isso evita que você tente registrar um tipo de ponto que não existe,
-     como, por exemplo, "janta".</p>
-    <p class="explicacao">👉 O return acontece quando o método de registrar hora não é executado. Neste caso, você só precisa escrever uma mensagem de registro inválido.</p>
-  
-    <p class="explicacao">👉 O método registrarHora(tipo) recebe um tipo de horário,
-     como chegada, saidaAlmoco, retornoAlmoco ou saida. Se o tipo de horário fornecido for um dos tipos válidos
-     do objeto registro, o método atribui a data e hora atuais a esse tipo e, em seguida, retorna a mensagem:
-     "Ponto de entrada registrado para [nome registrado no input]". Caso o tipo de horário não seja válido, o
-     método retorna uma mensagem de erro. O método obterRegistro serve para recuperar os horários que foram
-     registrados. Se apenas um horário foi registrado, ele retorna apenas esse. Se vários horários foram
-     registrados, ele retorna todos eles.</p>
-</div>
-
-
-   <p class="explicacao">👉<strong>Resumindo:</strong> a classe Ponto é um modelo para criar objetos que registram horários de uma pessoa, como chegada, saída e intervalos. O constructor cria o objeto com espaços para esses horários. O método registrarHora(tipo) registra o horário atual para tipos válidos, retornando uma mensagem de confirmação, e evita registros inválidos. O método obterRegistro() retorna os horários que já foram registrados.</p>
- </div>
-
- <div class="bloco">
-  <h2>💾 5. Salvando e Recuperando Dados com localStorage</h2>
-
-<pre class="pre">
- <div class="image">
-  <img src="./imgtutor/Salvando e Recuperando Dados com localStorage.PNG" alt="">
- </div> 
-</pre>
-  <p class="explicacao">
-   👉 Na função salvarRegistros(), o JSON.stringify(registrosDePonto) transforma o array de objetos em uma string de texto no formato JSON, pois o localStorage só consegue guardar texto. localStorage.setItem guarda essa string na "key" chamada registrosDePonto (essa é a
-   chave, ou seja, o nome que usamos para identificar esse dado). Depois, sempre que precisarmos acessar os
-   dados salvos, usamos essa mesma chave.
-  </p>
-
-  <p class="explicacao">
-   👉 Na função encontrarPontoPorNome(nome), ela recebe um valor (nome). Usamos o find() para procurar no array o primeiro objeto onde
-   ponto.nome seja igual ao nome informado. Os dois são convertidos para minúsculas com .toLowerCase() para
-   evitar problemas com maiúsculas/minúsculas (por exemplo, "BERNARDO" e "bernardo" são tratados como iguais).
-   Se encontrar, retorna o objeto inteiro com os registros da pessoa; se não encontrar, retorna undefined.
-  </p>
- </div>
-
- <div class="bloco">
-  <h2>🔄 6. Atualizar a interface</h2>
-  <pre class="pre">
-   <div class="image2">
-    <img src="./imgtutor/atualizar interface1.png" alt="">
- 
-    <img src="./imgtutor/atualizar interface2.png" alt="">
-  
-    <img src="./imgtutor/atualizar interface3.png" alt="">
-   
-    <img src="./imgtutor/atualizar interface4.png" alt="">
-   </div> 
-  </pre>
-  <button class="accordion">Explicação detalhada</button>
-<div class="panel">
- <p class="explicacao">👉 A função atualizarInterface() é responsável por atualizar o que o usuário vê na
-  tela, exibindo os nomes e horários registrados.</p>
- <p class="explicacao">👉 registrosLista.innerHTML = '' é a variável que recebeu nosso id da ul. Passamos uma string vazia para ela, para evitar duplicação.</p>
- <p class="explicacao">👉 O if (registrosDePonto.length === 0) verifica se há registros. Se for 0, significa que ninguém registrou ponto
-  ainda, então mostra apenas a mensagem "Nenhum registro encontrado" e sai da função com return.</p>
-  <p class="explicacao">👉 ponto 👈 dentro do forEach é o parâmetro que usamos (próprio do forEach) para o item atual; ele só está com o nome de ponto. 
-   Esse item atual é em relação ao array registrosDePonto que criamos lá na parte do localStorage.</p>
- <p class="explicacao">👉 No forEach, para cada item do nosso array de registrosDePonto, criamos uma li com divs para a pessoa,
-  ou seja: O forEach serve para criar o HTML de cada pessoa que tem um ponto salvo. Primeiro, adiciona o nome da pessoa dentro da div class="nome-pessoa". 
-  Depois, na div class="horarios-ponto" é uma div que fica aberta por enquanto, pois vamos criar mais divs dentro dela.</p>
-  <p class="explicacao">👉 const registros = ponto.registros é a variável registros e recebe o item com tudo que tem dentro dele, como uma referência.</p>
- <p class="explicacao">👉 for in... percorremos todas as chaves de registros, que na verdade tem tudo o que foi registrado dentro dela. Cada volta que o for faz, ele usa um dos tipos, por exemplo: chegada, saidaAlmoco, etc. Isso significa que, para cada tipo de registro feito, será executada a programação dentro do for.</p>
- <p class="explicacao">👉 console.log("Registro tipo = "+registros[tipo]) é o horário.</p>
- <p class="explicacao">👉 console.log(tipo) é a chegada, saidaAlmoço, etc...</p>
- <p class="explicacao">👉 No if, se ele achar um horário, então ele formata os textos. Essa formatação acontece pelo switch case. Cada case é um tipo que formata, verificando o valor desse tipo. O default é para caso tivermos outro tipo de ponto que não existir. Ele não vai formatar o texto, mas irá rodar o código mostrando esse tipo, como, por exemplo, horas extras.</p>
- <p class="explicacao">👉 html += Adicionamos à variável html uma div com a classe item-ponto, já com todo css dentro dela. Teremos uma div com a variável tipoFormatado, para mostrar o tipo de ponto; também teremos outra div com a variável registros[tipo], que é o horário.</p>
- <p class="explicacao">👉 Fora do for, temos a variável html recebendo e acrescentando o fechamento das tags da div principal e da li.</p>
- 
- <p class="explicacao">👉 Por último, temos a variável registrosLista, que é a variável que recebeu o id da lista ul. Essa variável vai receber a outra variável html escrevendo em html.registrosLista.innerHTML += html.</p>
-</div>
-<p class="explicacao">👉<strong>Resumindo:</strong> a função atualizarInterface() mostra na tela os nomes e horários registrados pelos usuários. Primeiro, ela limpa a lista para evitar duplicação e verifica se há registros; se não houver, exibe “Nenhum registro encontrado” e encerra. Para cada registro no array, percorre os horários usando forEach e for...in, formata cada tipo de ponto (como chegada ou saída) com switch e cria o HTML correspondente com divs para nome e horários. Por fim, esse HTML é inserido na lista da página usando innerHTML, atualizando o que o usuário vê.</p>
-
- </div>
-
- <div class="bloco">
-  <h2>🎰 7. Função principal para registrar ponto</h2>
-  <p class="explicacao">👉 A função abaixo é a mais importante de todas.</p>
-<pre class="pre">
- <div class="image">
-  <img src="./imgtutor/registrar ponto.PNG" alt="">
- </div> 
-</pre>
-
-<button class="accordion">Explicação detalhada</button>
-<div class="panel">
-  <p class="explicacao">👉 A função registrarPonto(tipo) é a principal, pois gerencia todo o
-    processo: verifica se o nome foi inserido, busca o registro da pessoa, cria um novo se não existir, registra
-    a hora do ponto, salva os dados no localStorage e, por fim, atualiza a interface.</p>
-   <p class="explicacao">👉 A primeira coisa que essa função faz é receber o que está sendo passado pelos botões. Lembrando que quando clicamos em algum botão estamos passando o tipo de ponto desse botão, exemplo: chegada.</p>
-   <p class="explicacao">👉 Depois de receber o valor de algum botão, a variável nome recebe o valor da variável do input de nome com nomeInput.value e
-    usa o .trim() para remover espaços em branco no início e no fim. Em seguida, o if (!nome) verifica se a
-    string nome está vazia ou se contém apenas espaços. Se não tiver um nome, um alert é exibido e a função para
-    com return.</p>
-   <p class="explicacao">👉 Depois, a linha let pontoDoDia = encontrarPontoPorNome(nome) usa a função auxiliar que
-    criamos para procurar se já existe um registro para o nome digitado. Se o registro for encontrado, ele será
-    atribuído à variável pontoDoDia; se não, a variável será undefined.</p>
-   <p class="explicacao">👉 A próxima linha if (!pontoDoDia) verifica se o registro não foi encontrado. Se for
-    true, significa que é a primeira vez que essa pessoa está registrando um ponto. Nesse caso, a linha
-    pontoDoDia = new Ponto(nome) cria um novo objeto usando a nossa classe Ponto, e a linha
-    registrosDePonto.push(pontoDoDia) adiciona esse novo objeto ao nosso array principal.</p>
-   <p class="explicacao">👉 Por fim, a linha pontoDoDia.registrarHora(tipo) chama o método da nossa classe para
-    registrar o horário do ponto. Em seguida, as funções salvarRegistros() e atualizarInterface() são chamadas
-    para garantir que os dados estejam salvos e a interface seja atualizada. A linha nomeInput.value =
-    '' limpa o campo de nome, deixando-o pronto para o próximo registro.</p>
-</div>
-
-<p class="explicacao">👉<strong>Resumindo:</strong> a função registrarPonto(tipo) gerencia todo o processo de registro: recebe o tipo de ponto do botão clicado, pega o nome do input e verifica se ele não está vazio. Em seguida, procura um registro existente para essa pessoa; se não existir, cria um novo objeto Ponto e adiciona ao array de registros. Depois, registra o horário usando o método da classe, salva os dados no localStorage, atualiza a interface e limpa o campo de nome para o próximo registro..</p>
- </div>
   <div class="bloco">
-   <h2>📺 8. Inicialização e carregamento do relógio ponto</h2>
-
-<pre class="pre">
- <div class="image">
-  <img src="./imgtutor/chamadaatualizarinterface.PNG" alt="">
- </div> 
-</pre>
-<p class="explicacao" style="margin-bottom: 60px">👉 Chamamos a função atualizarInterface fora de tudo, para que quando a página iniciar já mostre tudo que existe no localStorage.</p>
-
+    <h2>🎯 Objetivo do Projeto</h2>
+    <pre>
+- Clique na imagem para ganhar moedas.
+- Use as moedas para comprar melhorias.
+- Mais moedas por clique.
+- Mais moedas por segundo.
+    </pre>
+    <p class="explicacao">👉 Um jogo simples onde o jogador evolui clicando e comprando upgrades.</p>
+  </div>
+  <div class="bloco">
+    <h2>📃 1. Selecionando os Elementos da Página</h2>
+    <pre>
+      <div class="image">
+        <img src="./img/clicker1.PNG" alt="">
+      </div>
+          </pre>
+          <p class="explicacao">👉 Estas linhas de código usam <strong>document.querySelector( )</strong> para obter referências a quatro elementos HTML essenciais para o jogo: imagem (o alvo do clique), contador (onde o total será exibida), contadorSegundos (onde o o valor por segundos será exibido) e cliques (quanto vale cada clique).</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🖱 2. Mapeando os botões</h2>
+    <pre>
+<div class="image">
+  <img src="./img/clicker2.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 O código anexa um manipulador de eventos diretamente à propriedade .onclick do elemento HTML com o ID &quot;btc1, btc2...&quot;. Quando este elemento for clicado, a função botaoc1, botaoc1... será executada.</p>
   </div>
 
+  <div class="bloco">
+    <h2>🌎 3. Variáveis</h2>
+    <pre>
+<div class="image">
+  <img src="./img/clicker3.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 Estas linhas declaram e inicializam com let as variáveis que controlam o estado do jogo clicker: numeroCliques (o ganho por clique, começando em 1), numeroSegundos (ganho por segundo, começando em 0) e moedas (a pontuação total do jogador, começando em 0).</p>
+    <p class="explicacao">👉 Linhas 21, 22 e 23 usam a propriedade .innerText para inicializar a exibição no HTML da pontuação atual, valor por segundos e valor de cada clique.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🖼 4. Efeito da imagem</h2>
+    <pre>
+<div class="image">
+  <img src="./img/clicker4.PNG" alt="">
+</div>
+    </pre>
+<p class="explicacao">👉 O método .addEventListener() é usado para anexar um manipulador de eventos à variável imagem (a imagem principal do jogo). O evento que ele está escutando é o "click". Quando a imagem é clicada, a função anônima de callback será executada.</p>
+<p class="explicacao">👉 O valor da variável moedas é incrementado pela quantidade armazenada em numeroCliques (moedas += numeroCliques é o mesmo que moedas = moedas + numeroCliques). Isso adiciona o ganho por clique à pontuação total.</p>
+<p class="explicacao">👉 O conteúdo de texto (innerText) do elemento contador é atualizado para exibir o novo total de moedas (&quot;Moedas: &quot; + moedas).</p>
+<p class="explicacao">👉 A propriedade de estilo CSS transform do elemento clicado (this, que se refere ao elemento imagem) é definida como &quot;scale(95%)&quot;. Isso causa um efeito visual de encolhimento, simulando o "clique" na imagem.</p>
+<p class="explicacao">👉 A função <strong>setTimeout( )</strong> é chamada. Esta função nativa do JavaScript executa um bloco de código (a função de seta () =&gt; { ... }) apenas uma vez após um atraso especificado (o segundo argumento).</p>
+<p class="explicacao">👉 O bloco de código dentro do setTimeout é definido. A propriedade de estilo CSS transform do elemento (this, ainda se referindo à imagem) é definida de volta para &quot;scale(1)&quot; (escala normal).</p>
+<p class="explicacao">👉 O tempo de atraso (delay) do setTimeout é definido como 200 milissegundos. Após este breve período, o código na linha 32 será executado para restaurar a imagem ao seu tamanho normal.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>⌚ 5. setInterval</h2>
+    <pre>
+<div class="image">
+  <img src="./img/clicker5.PNG" alt="">
+</div>
+    </pre>
+<p class="explicacao">👉 A função <strong>setInterval( )</strong> é chamada. Esta função nativa do JavaScript executa repetidamente um bloco de código (a função anônima de callback) em intervalos de tempo fixos e contínuos (o segundo argumento). Este é o mecanismo do jogo para ganhos por segundo.</p>
+<p class="explicacao">👉 O valor da variável moedas é incrementado pela quantidade armazenada em numeroSegundos. Como esta linha está dentro de um setInterval que roda a cada 1000ms (1 segundo), ela adiciona o ganho passivo à pontuação a cada segundo.</p>
+<p class="explicacao">👉 O conteúdo de texto (innerText) do elemento contadorSegundos é atualizado. Ele exibe a string &quot;Segundos: &quot; concatenada com o valor de numeroSegundos, mostrando ao jogador o valor de ganho por segundo.</p>
+<p class="explicacao">👉 O conteúdo de texto (innerText) do elemento contador é atualizado para exibir o novo total de moedas (&quot;Moedas: &quot; + moedas), refletindo o ganho passivo de moedas que acabou de ocorrer.</p>
+<p class="explicacao">👉 O tempo de intervalo (interval) do setInterval é definido como 1000 milissegundos (ou seja, 1 segundo). Isso significa que as linhas 39 a 41 serão executadas a cada segundo.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>💰 6. Upgrades</h2>
+    <pre>
+<div class="image">
+  <img src="./img/clicker6.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 O código define duas funções principais de melhoria, ambas chamadas por botões de compra. A função botaoc1 (ligada ao botão "btc1") gerencia a compra de um upgrade de clique: ela verifica se o jogador tem 50 moedas, subtrai o custo, incrementa a variável numeroCliques em 1, e atualiza o display de moedas e o display de ganho por clique. Já a função botaos1 (ligada ao botão "bts1") gerencia o upgrade de ganho passivo: ela verifica se o jogador tem 100 moedas, subtrai o custo, incrementa a variável numeroSegundos em 1 (aumentando o ganho por segundo), e atualiza o display de moedas e o display de ganho por segundo.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>💰 7. Outros upgrades</h2>
+
+    <p class="explicacao" style="margin-bottom: 30px">👉 Você já entendeu como os botões dos upgrades funcionam. Tivemos o exemplo do botaoc1 (upgrade de clique) e do botaos1 (upgrade por segundo). Seu próximo passo é fazer o restante dos upgrades: botaoc2 até botaoc5 e botaos2 até botaos5. Lembre-se que cada função deve ter um custo crescente e, se o custo for pago, deve incrementar a variável de ganho correta (numeroCliques ou numeroSegundos) e atualizar os placares na tela. O nome da função deve sempre coincidir com o que foi atribuído ao .onclick no HTML.</p>
+  </div>
   <div class="btt">
     <div class="circle-buttons">
       <button class="circle"><a href="./index.html">01</a></button>
@@ -319,7 +148,7 @@ Os dados devem ser salvos no navegador localStorage para que não se percam ao r
       </button>
 
       <button class="avancar">
-        <a href="./projeto11.html">Avançar</a>
+        <a href="./projeto12.html">Avançar</a>
       </button>
     </div> 
   </div>

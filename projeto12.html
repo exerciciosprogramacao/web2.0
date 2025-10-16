@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="projeto12.css">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+  <div class="btt">
+    <div class="circle-buttons" style="margin-bottom: 20px;">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons">
+      <button class="avancar">💰 25</button>
+      <button class="avancar" onclick="toggleDarkMode()">👓</button>
+    </div>
+  </div>
+  
+  <h1>Carrossel 2</h1>
+
+  <div class="image">
+    <img src="./img/xmenlogo.PNG" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🎯 Objetivo</h2>
+    <pre>
+- Criar um tipo diferente de carrossel de imagens funcional usando JavaScript puro.
+- Ao passar em cima de uma imagem de personagem, a imagem correspondente deve aparecer.
+
+<a class="download" href="projeto8/projeto8.rar" download>💾 Clique aqui para baixar o HTML, CSS e imagens.</a>
+
+👉 Clique no link acima e baixe tudo em sua pasta. O arquivo é <code>.rar</code>.
+🖱 Clique com o botão direito em cima do arquivo e selecione "Extrair arquivos", depois clique em OK.
+Após isso, uma pasta será criada com todos os arquivos.
+    </pre>
+    <p class="explicacao">👉 Um exercício de lógica e manipulação do DOM com interações visuais.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🧱 1. Selecionando os Elementos</h2>
+    <pre>
+<div class="image">
+  <img src="./img/xmenquerryall.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 <strong>querySelectorAll</strong> retorna uma lista de todos os elementos que possuem a classe informada. Essa lista permite que você acesse cada elemento pelo índice (como se fosse um array).</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>🖱️ 2. Função - Detectando Mouse - remove e add</h2>
+    <pre>
+- Use forEach para percorrer os botões
+
+<div class="image">
+  <img src="./img/xmenforeach.PNG" alt="">
+</div>
+    </pre>
+    <button class="accordion">Explicação detalhada</button>
+    <div class="panel">
+<p class="explicacao">👉 O método <strong>.forEach( )</strong> é chamado na lista de elementos personagens (obtida na linha 1). Este método itera sobre cada elemento na lista e executa a arrow function para cada um. O parâmetro de cada iteração é chamado de personagem.</p>
+<p class="explicacao">👉 Para cada elemento personagem, o método <strong>.addEventListener( )</strong> é usado para anexar um manipulador de eventos. O evento escutado é 'mouseenter' (disparado quando o mouse entra na área do elemento).</p>
+<p class="explicacao">👉 A variável personagemSelecionado é declarada com const e armazena o primeiro elemento HTML no documento que possui a classe CSS .selecionado. O método document.querySelector() é usado para encontrar esse elemento.</p>
+<p class="explicacao">👉 O elemento que atualmente tem a classe .selecionado tem essa classe removida, usando a propriedade classList.remove(). Isso "desseleciona" o personagem que estava ativo anteriormente.</p>
+<p class="explicacao">👉 O elemento personagem atual (sobre o qual o mouse acabou de passar) recebe a classe CSS .selecionado, usando a propriedade classList.add(). Isso o torna o novo personagem ativo/selecionado.</p>
+<p class="explicacao">👉 Chamada de uma função externa chamada alterarImagemPersonagemSelecionado, que recebe o elemento personagem atual como argumento. Esta função será responsável por trocar a imagem principal com base no personagem selecionado.</p>
+<p class="explicacao">👉 Chamada de uma função externa chamada alterarNomePersonagemSelecionado, que recebe o elemento personagem atual como argumento. Esta função será responsável por atualizar o nome do personagem na interface.</p>
+<p class="explicacao">👉 Chamada de uma função externa chamada alterarDescricaoPersonagem, que recebe o elemento personagem atual como argumento. Esta função será responsável por atualizar a descrição do personagem na interface.</p>
+    </div>
+<p class="explicacao">👉 <strong>Resumindo: </strong>O código percorre todos os personagens, adiciona um evento de mouse, remove a classe do anterior e aplica ao novo selecionado, atualizando imagem, nome e descrição por meio de funções externas.</p>
+</div>
+  
+  <div class="bloco">
+    <h2>🧔 3. Exibir personagem</h2>
+    <pre>
+<div class="image">
+  <img src="./img/xmenimagemfunc.PNG" alt="">
+</div>
+    </pre>
+    <button class="accordion">Explicação detalhada</button>
+    <div class="panel">
+    <p class="explicacao">👉 Declaração de uma função chamada alterarImagemPersonagemSelecionado, que foi chamada na linha 10. Ela recebe um parâmetro chamado personagem (o elemento HTML que foi clicado ou sobre o qual o mouse passou).</p>
+    <p class="explicacao">👉 A variável imagemPersonagemGrande é declarada com const e armazena o primeiro elemento HTML no documento que possui a classe CSS .personagem-grande. Este é o elemento img que exibe a imagem principal/grande do personagem.</p>    
+    <p class="explicacao">👉 A variável idPersonagem é declarada com const e armazena o valor do atributo id do elemento personagem que foi passado como argumento. Este ID (ex: "ciclope", "wolverine") será usado para construir o nome do arquivo de imagem.</p>   
+    <p class="explicacao">👉 O atributo src (fonte) do elemento imagemPersonagemGrande é atualizado. É utilizada uma Template Literal (crases `) para construir o caminho do arquivo da nova imagem: ./imagens/card-${idPersonagem}.png. Isso garante que a imagem exibida corresponda ao ID do personagem selecionado (ex: se o idPersonagem for "wolverine", o caminho será ./imagens/card-wolverine.png).</p>
+    </div>
+<p class="explicacao">👉 <strong>Resumindo: </strong>a função troca a imagem grande do personagem na tela usando seu ID como referência para o nome do arquivo.</p>
+    
+  </div>
+  
+  <div class="bloco">
+    <h2>🎴 4. Alterar nome</h2>
+    <pre>
+<div class="image">
+  <img src="./img/xmennomefunc.PNG" alt="">
+</div>
+    </pre>
+<p class="explicacao">👉 Declaração de uma função chamada alterarNomePersonagemSelecionado, que foi chamada na linha 11. Ela recebe o parâmetro personagem (o elemento HTML que representa o personagem que foi selecionado).</p>
+<p class="explicacao">👉 A variável nomePersonagem é declarada com const e armazena o elemento HTML com o ID &#39;nome-personagem&#39;, usando a função document.getElementById(). Este é o elemento onde o nome do personagem grande é exibido.</p>
+<p class="explicacao">👉 A propriedade .innerText do elemento nomePersonagem é atualizada. O novo texto é obtido do elemento personagem usando o método .getAttribute('data-name'). Isso significa que o nome completo do personagem está armazenado em um atributo de dados (data attribute) HTML chamado data-name no elemento do personagem selecionado.</p>
+  </div>
+  
+  <div class="bloco">
+    <h2>📃 5. Alterar descrição</h2>
+    <pre>
+<div class="image">
+  <img src="./img/xmendescfunc.PNG" alt="">
+</div>
+    </pre>
+<p class="explicacao">👉 Declaração de uma função chamada alterarDescricaoPersonagem, que foi chamada na linha 12. Ela recebe o parâmetro personagem (o elemento HTML do personagem que foi selecionado).</p>
+<p class="explicacao">👉 A variável descricaoPersonagem é declarada com const e armazena o elemento HTML com o ID &#39;descricao-personagem&#39;, usando a função document.getElementById(). Este é o elemento onde o texto de descrição do personagem grande é exibido.</p>
+<p class="explicacao" style="margin-bottom: 30px">👉 A propriedade .innerText do elemento descricaoPersonagem é atualizada. O novo texto de descrição é obtido do elemento personagem usando o método .getAttribute('data-description'). Isso significa que a descrição do personagem está armazenada em um atributo de dados HTML chamado data-description no elemento do personagem selecionado.</p>
+  </div>
+  
+  <div class="btt">
+    <div class="circle-buttons">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons" style="margin-top: 20px;">
+      <button class="voltar">
+      <a href="./projeto11.html">Voltar</a>
+      </button>
+
+      <button class="avancar">
+        <a href="./projeto13.html">Avançar</a>
+      </button>
+    </div> 
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

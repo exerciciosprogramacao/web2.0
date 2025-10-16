@@ -1,332 +1,333 @@
 /* ======== TEMA PADRÃO (ANTES era body.dark) ======== */
 body {
-  background-color: #121212;
-  color: #eee;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  font-family:'Courier New', Courier, monospace;
-  line-height: 1.2;
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-h2 {
-  background-color: #333;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-pre{
-  overflow-x: auto;
-}
-
-.accordion {
-  background-color: #333;
-  border-radius: 5px;
-  font-family:'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #eee;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    font-family:'Courier New', Courier, monospace;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
   
-  color: #eee;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #1e1e1e;
-
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: #333;
-  border-radius: 5px;
-
-  display: none;
-  overflow: hidden;
-}
-
-.accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-
-.bloco {
-  margin-bottom: 20px;
-}
-
-/* .explicacao {
-  font-style: italic;
-} */
-.bt{
-  display: flex;
-  justify-content: space-between;
-}
-
-.top-buttons{
-  display: flex;
-  justify-content: space-between;
-  max-width: 800px;
-
-}
-.circle-buttons{
-  display: flex;
-  justify-content: space-between;
-  max-width: 800px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.btt{
+  h2 {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  pre{
+    overflow-x: auto;
+  }
+  
+  .accordion {
+    background-color: #333;
+    border-radius: 5px;
+    font-family:'Courier New', Courier, monospace;
+    
+    color: #eee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #1e1e1e;
+  
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: #333;
+    border-radius: 5px;
+  
+    display: none;
+    overflow: hidden;
+  }
+  
+  .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+  
+  .bloco {
+    margin-bottom: 20px;
+  }
+  
+  /* .explicacao {
+    font-style: italic;
+  } */
+  .bt{
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-}
-
-.avancar, .voltar {
-  background-color: #1e1e1e;
-  border: solid 1px #555;
-  color: #eee;
-  border-radius: 5px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.circle{
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background-color: #1e1e1e;
-  border: solid 1px #555;
-  color: #eee;
-  text-align: center;
-  margin-top: 2.5px;
-  /* padding: 1px; */
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.circle.ativo{
-  background-color: #333;
-
-}
-.avancar:hover, .voltar:hover, .circle:hover {
-  background-color: #333;
-}
-
-
-  a{
-    text-decoration: none;
-  color:#999292;
-
-}
-.download{
-  font-size: large; 
-}
-.download:hover{
-  color: #333;
-  
-  
-}
-
-.image {
-  max-width: 800px;
-  max-height: 800px;
-  display: flex;
-  justify-content: center;
-}
-
-.image2{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.imagedupla{
-  max-width: 800px;
-  max-height: 800px;
-  display: flex;
-  justify-content: center;
-}
-
-img {
-  max-width: 700px;
-  max-height: 500px;
-  border-radius: 5px;
-}
-
-
-h1 {
-  text-align: center;
-  margin-top: 30px;
-}
-
-button {
-  width: 62.67px;
-}
-
-@media (max-width: 768px) {
-
-  img {
-    max-width: 300px;
   }
-  .btt {
+  
+  .top-buttons{
     display: flex;
-    flex-direction: column; /* coluna principal */
+    justify-content: space-between;
+    max-width: 800px;
+  
+  }
+  .circle-buttons{
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .btt{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+  
+  .avancar, .voltar {
+    background-color: #1e1e1e;
+    border: solid 1px #555;
+    color: #eee;
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .circle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #1e1e1e;
+    border: solid 1px #555;
+    color: #eee;
+    text-align: center;
+    margin-top: 2.5px;
+    /* padding: 1px; */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
     align-items: center;
+  
   }
-
-  /* Linha dos dois botões principais 💰 e 👓 */
-  .btt .top-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  
+  .circle.ativo{
+    background-color: #333;
+  
   }
-
-  /* Linha dos círculos */
-  .btt .circle-buttons {
+  .avancar:hover, .voltar:hover, .circle:hover {
+    background-color: #333;
+  }
+  
+  
+    a{
+      text-decoration: none;
+    color:#999292;
+  
+  }
+  .download{
+    font-size: large; 
+  }
+  .download:hover{
+    color: #333;
+    
+    
+  }
+  
+  .image {
+    max-width: 800px;
+    max-height: 800px;
     display: flex;
-    flex-wrap: wrap; /* permite quebrar linha se necessário */
-    gap: 3px;
-    width: 100%;
-   }
-
-  .circle {
-    height: 20px;
-    width: 20px;
-    font-size: 10px;
+    justify-content: center;
+  }
+  
+  .image2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   .imagedupla{
-    height: auto;
+    max-width: 800px;
+    max-height: 800px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  h2{
-    font-size: 17px;
+    justify-content: center;
   }
   
-}
-
-
-
-/* ======== NOVO TEMA CYBERPUNK ========  */
-
-
-body.cyberpunk {
-  background-color: #f7f7f7;
-  color: #333;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* body.tit{
-  color: #FCFF39;
-} */
-
-body.cyberpunk h2 {
-  /* background: linear-gradient(90deg, #ff00ff, #00ffff); */
-  background-color: #ccc;
-  /* color: #000000; */
-  color: #333;
-
-}
-/* body.cyberpunk a:hover{
-  color: #ccc;
-} */
-body.cyberpunk h1{
-  color: #333;
-}
-
-body.cyberpunk .accordion {
-  background-color:#eee ;
-
-  border-radius: 5px;
-  font-family:'Courier New', Courier, monospace;
-  color: #333;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-body.cyberpunk .active, body.cyberpunk .accordion:hover {
-  background-color: #ccc;
-
-
-}
-
-body.cyberpunk .panel {
-  padding: 0 18px;
-  background-color:#eee ;
-
-
-  border-radius: 5px;
-
-  display: none;
-  overflow: hidden;
-}
-
-
-body.cyberpunk .avancar,
-body.cyberpunk .voltar, 
-body.cyberpunk .circle {
-  background-color: #f7f7f7;
-  border: solid 1px  #cccccc;
-  color: #333;
-  /* text-shadow: 0 0 5px #00ffff; */
+  img {
+    max-width: 700px;
+    max-height: 500px;
+    border-radius: 5px;
+  }
   
-}
-
-body.cyberpunk .avancar:hover,
-body.cyberpunk .voltar:hover, 
-body.cyberpunk .circle:hover {
-  background-color:#eee ;
-  /* border-color: #00ffff; */
-  /* box-shadow: 0 0 15px #FCFF39; */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-
-}
-
-body.cyberpunk a {
-  color: #333;
-  /* text-shadow: 0 0 5px #ff00ff; */
-}
-
-body.cyberpunk .download:hover {
-  color: #777;
-
-
-  /* text-shadow: 0 0 5px #ff00ff; */
-}
-
-/* body.cyberpunk img {
-  border: 1px solid  #FCFF39;
-  box-shadow: 0 0 15px #FCFF39;
-} */
-
-body.cyberpunk .circle.ativo{
-  background-color:#eee ;
-
-}
-
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  button {
+    width: 62.67px;
+  }
+  
+  @media (max-width: 768px) {
+  
+    img {
+      max-width: 300px;
+    }
+    .btt {
+      display: flex;
+      flex-direction: column; /* coluna principal */
+      align-items: center;
+    }
+  
+    /* Linha dos dois botões principais 💰 e 👓 */
+    .btt .top-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    /* Linha dos círculos */
+    .btt .circle-buttons {
+      display: flex;
+      flex-wrap: wrap; /* permite quebrar linha se necessário */
+      gap: 3px;
+      width: 100%;
+     }
+  
+    .circle {
+      height: 20px;
+      width: 20px;
+      font-size: 10px;
+    }
+    .imagedupla{
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  
+    h2{
+      font-size: 17px;
+    }
+    
+  }
+  
+  
+  
+  /* ======== NOVO TEMA CYBERPUNK ========  */
+  
+  
+  body.cyberpunk {
+    background-color: #f7f7f7;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  /* body.tit{
+    color: #FCFF39;
+  } */
+  
+  body.cyberpunk h2 {
+    /* background: linear-gradient(90deg, #ff00ff, #00ffff); */
+    background-color: #ccc;
+    /* color: #000000; */
+    color: #333;
+  
+  }
+  /* body.cyberpunk a:hover{
+    color: #ccc;
+  } */
+  body.cyberpunk h1{
+    color: #333;
+  }
+  
+  body.cyberpunk .accordion {
+    background-color:#eee ;
+  
+    border-radius: 5px;
+    font-family:'Courier New', Courier, monospace;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  body.cyberpunk .active, body.cyberpunk .accordion:hover {
+    background-color: #ccc;
+  
+  
+  }
+  
+  body.cyberpunk .panel {
+    padding: 0 18px;
+    background-color:#eee ;
+  
+  
+    border-radius: 5px;
+  
+    display: none;
+    overflow: hidden;
+  }
+  
+  
+  body.cyberpunk .avancar,
+  body.cyberpunk .voltar, 
+  body.cyberpunk .circle {
+    background-color: #f7f7f7;
+    border: solid 1px  #cccccc;
+    color: #333;
+    /* text-shadow: 0 0 5px #00ffff; */
+    
+  }
+  
+  body.cyberpunk .avancar:hover,
+  body.cyberpunk .voltar:hover, 
+  body.cyberpunk .circle:hover {
+    background-color:#eee ;
+    /* border-color: #00ffff; */
+    /* box-shadow: 0 0 15px #FCFF39; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+  
+  }
+  
+  body.cyberpunk a {
+    color: #333;
+    /* text-shadow: 0 0 5px #ff00ff; */
+  }
+  
+  body.cyberpunk .download:hover {
+    color: #777;
+  
+  
+    /* text-shadow: 0 0 5px #ff00ff; */
+  }
+  
+  /* body.cyberpunk img {
+    border: 1px solid  #FCFF39;
+    box-shadow: 0 0 15px #FCFF39;
+  } */
+  
+  body.cyberpunk .circle.ativo{
+    background-color:#eee ;
+  
+  }
+  
+  

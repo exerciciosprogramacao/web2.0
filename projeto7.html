@@ -3,9 +3,9 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Pokédex - Projeto API</title>
-  <link rel="stylesheet" href="projeto7.css"> 
-  <link rel="icon" type="image/png" href="./img/logo.png">
+ <title>Exercícios</title>
+ <link rel="stylesheet" href="projeto7.css"> 
+ <link rel="icon" type="image/png" href="./img/logo.png">
 </head>
 <body>
 
@@ -28,189 +28,266 @@
       <button class="circle"><a href="./projeto15.html">15</a></button>
     </div>
     <div class="top-buttons">
-      <button class="avancar">💰 35</button>
+      <button class="avancar">💰 50</button>
       <button class="avancar" onclick="toggleDarkMode()">👓</button>
     </div>
   </div>
 
- <h1>Pokédex API</h1>
+  <h1>Card Pessoal</h1>
 
-<div class="image">
-  <img src="./img/pokedex.PNG">
-</div>
+  <div class="image">
+    <img src="./img/ww.PNG">
+  </div>
 
- <div class="bloco">
-  <h2>🎯 Objetivo do Projeto</h2>
-  <pre>
-- Construir uma Pokédex interativa com API pública PokeAPI.
-- Exibir nome, ID, imagem e tipos de cada Pokémon em modelo de "cards".
-- Implementar um botão "Carregar Mais" para paginação.
-
-<a class="download" href="projeto7/projeto7.rar" download>💾 Clique aqui para baixar o Html e Css.</a>
-
-👉 Clique no link acima e baixe tudo em sua pasta. O arquivo é <code>.rar</code> 
-🖱 Clique com o botão direito encima do arquivo e clique em extrair arquivos, de ok.
-Após isso, uma pasta vai ser criada com todos os arquivos. 
-  </pre>
- </div>
- 
- <div class="bloco">
-  <h2>🧱 1. Elementos e Variáveis de Controle</h2>
-  <pre>
-    <div class="image">
-      <img src="./img/poke1.PNG" alt="">
-    </div>
-  </pre>
-  <p class="explicacao">👉 A variável pokedex recebe o elemento de div com o id <code>("pokedex")</code>.</p>
-  <p class="explicacao">👉 A variável loadMoreBtn recebe o elemento de div com o id <code>("loadMore")</code>.</p>
-  <p class="explicacao">👉 A variável offset é declarada com a palavra-chave let (indicando que seu valor pode ser alterado/reatribuído) e é inicializada com o valor 0. Em contextos como a busca de dados de uma API (como a PokéAPI), o offset geralmente representa o ponto de partida (o "deslocamento") na lista de resultados.</p>
-  <p class="explicacao">👉 A variável limit é declarada com a palavra-chave const (indicando que seu valor não pode ser alterado/reatribuído) e é inicializada com o valor 150. Em um contexto de API, o limit geralmente especifica o número máximo de itens a serem retornados em uma única solicitação.</p>
-
- </div>
- 
- <div class="bloco">
-  <h2>🌐 2. Função Assíncrona para Buscar Dados</h2>
-  <pre>
-    <div class="image">
-      <img src="./img/poke2.PNG" alt="">
-    </div>
-  </pre>
-  <button class="accordion">Explicação detalhada</button>
-<div class="panel">
-  <p class="explicacao">👉 Declaração de uma função chamada getPokemons que é assíncrona (async). Funções assíncronas permitem o uso da palavra-chave await, o que pausa a execução da função até que uma Promessa seja resolvida. A função aceita dois parâmetros: offset e limit que virão das variáveis definidas nas linhas 3 e 4.</p>
-  <p class="explicacao">👉 Início de um bloco try. O código dentro deste bloco será executado, e se ocorrer algum erro (como um problema de rede ou um JSON malformado), a execução será interrompida e o controle será transferido para o bloco catch (linha 17).</p>
-  <p class="explicacao">👉 A variável url é declarada com const e armazena uma string que é o endereço da API da PokéAPI. Esta string usa uma Template Literal (indicada pelas crases `) para injetar dinamicamente os valores dos parâmetros offset e limit no URL, o que define quais Pokémon serão solicitados.</p>
-  <p class="explicacao">👉 A variável res armazena a resposta da chamada à API, realizada com a função fetch(url). A palavra-chave await garante que a execução pause até que a Promessa da solicitação de rede seja resolvida (ou seja, até que a resposta do servidor seja recebida).</p>
-  <p class="explicacao">👉 A variável data armazena o corpo da resposta HTTP (contido em res) convertido para um objeto JavaScript/JSON. O método .json() também é assíncrono e requer o await.</p>
-  <p class="explicacao">👉 Início de um loop for...of. Este loop itera sobre o array data.results, que é onde a API armazena a lista inicial de Pokémon (cada um contendo, no mínimo, um nome e um URL de detalhes).</p>
-  <p class="explicacao">👉 A variável pokeRes armazena a resposta de uma nova chamada fetch. Para cada Pokémon no loop, o código faz uma segunda chamada à API (usando o pokemon.url) para obter os dados detalhados daquele Pokémon específico (como imagem, tipos, etc.).</p>
-  <p class="explicacao">👉 A variável pokeData armazena o corpo da resposta da chamada detalhada (contida em pokeRes) convertido para um objeto JavaScript/JSON, que agora contém todas as informações detalhadas do Pokémon.</p>
-  <p class="explicacao">👉 Chamada de uma função externa de nome createCard. Esta função recebe o objeto pokeData (os dados detalhados do Pokémon) e provavelmente é responsável por criar e exibir um card HTML na página para esse Pokémon.</p>
-  <p class="explicacao">👉 Início do bloco catch. Este bloco é executado somente se ocorrer um erro em qualquer uma das linhas dentro do bloco try (linhas 8-16). Ele recebe o objeto de erro (error) como argumento.</p>
-  <p class="explicacao">👉 O método console.error() é usado para imprimir uma mensagem de erro no console do navegador, indicando que houve um problema ao tentar buscar os Pokémon. O erro real também pode ser inspecionado através da variável error.</p>
-</div>
+  <div class="bloco">
+    <h2>🎯 Objetivo do Projeto</h2>
+    <pre>
+- Criar um card pessoal utilizando o conceito de Flexbox no CSS ("alinhamento de elementos por meio de display: flex", etc.).
+- Programar a interatividade na mudança de valores dos ícones por meio do JavaScript, usando o evento mouseenter.
+    </pre>
+  </div>
   
+  <div class="bloco">
+    <h2>📃 HTML</h2>
+    <p class="explicacao">👉 Logo abaixo temos um exemplo de HTML. Esse exemplo serve para que você possa criar o card de forma fácil, sem precisarmos nos aprofundar em outros conceitos. Apenas com o que sabemos até agora será possível realizar este exercício.</p>
+    <pre>
+      <div class="image">
+        <img src="./img/wwhtml.PNG" alt="">
+      </div>
+    </pre>
+    <p class="explicacao">👉 A partir dessa estrutura básica de HTML, crie classes para essas tags e deixe o resultado o mais parecido possível com o exemplo do link abaixo ou com a imagem ilustrativa:</p>
+      <pre>
+<a class="download" href="https://randomuser.me" target="_blank">💾 Clique aqui para ver o exemplo.</a>
+        </pre>
+        <p class="explicacao">👉 Todas as divs precisam de classes. Os conceitos de Flexbox são indispensáveis para obtermos o resultado final, pois serão <strong>eles — e somente eles —</strong> que irão centralizar absolutamente tudo no nosso projeto.</p>   
+        <p class="explicacao">👉 Usaremos a tag <strong>i</strong> dentro da <strong>li</strong>, que é onde devem estar os ícones. Isso ocorre porque é mais simples usar ícones com a tag <strong>i</strong>. Para mudarmos a cor, usamos a propriedade <strong>color</strong>, exatamente como se os ícones fossem fontes de texto. Porém, para isso, precisamos importar o link desses ícones no nosso HTML, dentro da tag <strong>head</strong>.</p>
+        <p class="explicacao">👉 A importação dos ícones pode ser encontrada no mesmo site.</p> 
+        <pre>
+<a class="download" href="https://boxicons.com" target="_blank" rel="noopener noreferrer">💾 Clique aqui para acessar.</a>
+        </pre>
+        <p class="explicacao">👉 Clique em <strong>Docs</strong> no menu no topo da tela e, em seguida, na parte esquerda da página, onde diz <strong>Usage as a font</strong>. Nessa tela que se abrirá ao clicar, estará explicado e bem visível o link para usarmos os ícones como fonte.</p>
+        <p class="explicacao">👉 Agora é só procurar o ícone que você quer dentro desse site e copiar a tag <strong>i</strong> correspondente.</p>
+      </div>
 
-  <p class="explicacao">👉 <strong>Resumindo:</strong> url guarda o endereço da API com os parâmetros de início (offset) e quantidade (limit) de pokémons.
-    res espera a resposta dessa URL.
-    data recebe essa resposta convertida para JSON → aqui vem a lista de pokémons, mas só com informações básicas (nome e url de detalhes).
-    No for...of, percorremos cada item de data.results (cada pokémon da lista).
-    pokeRes faz uma nova requisição usando o pokemon.url para pegar os detalhes de um pokémon específico.
-    pokeData guarda a resposta convertida em JSON → aqui sim vem todos os dados desse pokémon (id, nome, tipos, sprites etc).
-    createCard(pokeData) chama a função que monta o card na tela com esses dados.
-    Se alguma parte falhar, cai no catch e mostra "Erro ao buscar pokemon".
-    <p class="explicacao">👉 Então:</p>
-    <p class="explicacao">👉 data = lista simples de pokémons.</p>
-    <p class="explicacao">👉 pokeData = dados completos de um pokémon da lista.</p>
-</div>
+      <div class="bloco">
+        <h2>📃 2. CSS</h2>
+        
+        <p class="explicacao">👉 No CSS, não se esqueça de zerar alguns estilos usando o seletor <strong>*</strong>.</p>
+        <p class="explicacao">👉 Para o alinhamento com Flexbox é de extrema importância definir altura e largura para o body. Lembre-se de que queremos uma página sem rolagem, o que significa que o body deve ocupar o tamanho total da tela.</p>
+        <p class="explicacao">👉 Para que os ícones tenham um efeito parecido com o do exemplo do site — onde, ao passar o mouse sobre eles, se movimentam no eixo Y — usaremos o CSS abaixo.</p>
+        <pre>
+          <div class="image">
+            <img src="./img/wwcss.PNG" alt="">
+          </div>
+        </pre>
+        <p class="explicacao">👉 <strong>transform: translateY(-50%);</strong> faz com que o ícone vá para cima. A medida poderia ser em px também, como (-50px). O importante é que o valor seja negativo, pois indica o movimento para cima.</p>
+        <p class="explicacao">👉 <strong>transition: transform 0.4s;</strong> define o tempo que o ícone leva para fazer o movimento.</p>
+       <p class="explicacao">👉 <strong>cursor: pointer;</strong> muda o cursor do mouse de seta para uma mão apontando o dedo.</p>
+      </div>
 
- <div class="bloco">
-  <h2>🖼️ 3. Função para Criar e Exibir o Card</h2>
-  <pre>
+      <div class="bloco">
+        <h2>👾 3. JavaScript - IDs</h2>
+
+        <p class="explicacao">👉 Crie um ID no <strong>h3</strong> e outro no <strong>h4</strong>, além de uma classe na <strong>ul</strong>.
+          Importante: a classe deve ser adicionada na tag <strong>ul</strong>, e não nas <strong>li</strong>.
+          Com isso, teremos apenas 2 IDs no total.
+          Lembre-se também de importar o script corretamente.</p>
+      </div>
+
+      <div class="bloco">
+        <h2>🧔 4. Ícone ativo</h2>
+        <pre>
     <div class="image">
-      <img src="./img/poke3.PNG" alt="">
+      <img src="./img/wwtext.PNG" alt="">
     </div>
-  </pre>
-  <button class="accordion">Explicação detalhada</button>
-  <div class="panel">
-<p class="explicacao">👉 Declaração de uma função chamada createCard, que foi chamada na linha 15. Ela recebe um parâmetro chamado pokemon, que contém os dados detalhados de um Pokémon. </p>
-<p class="explicacao">👉 A variável card é declarada e armazena um novo elemento HTML div, criado dinamicamente com a função JavaScript document.createElement("div").</p>
-<p class="explicacao">👉 Adiciona a classe CSS &quot;card&quot; ao elemento div recém-criado, usando a propriedade classList.add( ).</p>
-<p class="explicacao">👉 A variável sprite é declarada. Ela tenta obter a URL da imagem de arte oficial do Pokémon em primeiro lugar (pokemon.sprites.other[&quot;official-artwork&quot;].front_default). Se essa URL não existir (o que é indicado pelo operador OR lógico ||), ela usa a sprite frontal padrão (pokemon.sprites.front_default) como alternativa.</p>
-<p class="explicacao">👉 Início da atribuição do conteúdo HTML interno do elemento card, usando a propriedade .innerHTML. É usado um Template Literal (crases `) para permitir a inserção de expressões JavaScript dentro da string.</p>
-<p class="explicacao">👉 Cria um elemento img (imagem). O atributo src (fonte) recebe o valor da variável sprite. O atributo alt (texto alternativo) recebe o nome do Pokémon (pokemon.name).</p>
-<p class="explicacao">👉 Cria um elemento div com a classe CSS &quot;name&quot;, que conterá o número e o nome do Pokémon.</p>
-<p class="explicacao">👉 Esta é a primeira parte do conteúdo da div da linha 31: exibe o símbolo # seguido do número do Pokémon (pokemon.id). O número é formatado usando o método .padStart(3, '0') (disponível em strings) para garantir que tenha sempre 3 dígitos, preenchendo com zeros à esquerda (ex: 1 se torna 001).</p>
-<p class="explicacao">👉 Esta é a segunda parte do conteúdo da div da linha 31: insere o nome do Pokémon (pokemon.name).</p>
-<p class="explicacao">👉 Cria um elemento div com a classe CSS &quot;types&quot;, que conterá as tags de tipo do Pokémon (ex: "Grass", "Poison").</p>
-<p class="explicacao">👉 Esta expressão JavaScript é responsável por processar o array de tipos do Pokémon (pokemon.types). O método .map( ) itera sobre cada tipo ( t ) e retorna uma nova string, que é um elemento span contendo o nome do tipo ( t.type.name ).</p>
-<p class="explicacao">👉 O método .join(" ") é chamado no array de strings retornado pelo .map( ). Ele junta todas as strings span em uma única string, sem nenhum separador, para que o HTML de todos os tipos seja inserido corretamente.</p>
-<p class="explicacao">👉 Fechamento do elemento div iniciado na linha 35.</p>
-<p class="explicacao">👉 Final da atribuição à propriedade .innerHTML.</p>
-<p class="explicacao">👉 O elemento card (que agora contém toda a estrutura HTML da linha 28 à 39) é adicionado como um novo elemento filho dentro do elemento pokedex (obtido na Linha 1). O método .appendChild() é a forma padrão de injetar elementos no DOM.</p>
+        </pre>
+        <p class="explicacao">👉 O conteúdo de texto (<strong>innerText</strong>) do elemento HTML com o ID <strong>"word"</strong> é substituído pela string <strong>"Hi, my name is"</strong>. A função <strong>document.getElementById( )</strong> é usada para localizar o elemento.</p>
+      </div>
+
+      <div class="bloco">
+        <h2>🗃 5. Mapeamento dos ícones</h2>
+        <pre>
+    <div class="image">
+      <img src="./img/wwquerrfor.PNG" alt="">
+    </div>
+        </pre>
+        <p class="explicacao">👉 Uma constante <strong>listItem</strong> é declarada para armazenar todos os elementos <strong>&lt;li&gt;</strong> que estão dentro de um elemento com a classe <strong>.list-menu</strong>, utilizando <strong>document.querySelectorAll( )</strong>. Em seguida, o código itera sobre cada um desses itens da lista com <strong>forEach( )</strong>. Para cada item, um ouvinte de evento é adicionado para o evento <strong>mouseenter</strong>, que é acionado quando o cursor do mouse entra na área do elemento.</p>
+        <p class="explicacao">👉 <strong>.list-menu</strong> é o nome dado à classe da tag <strong>ul</strong>; <strong>.list-menu li</strong> define a <strong>li</strong> que está dentro da classe <strong>.list-menu</strong>.</p>
+      
+      </div>
+
+      <div class="bloco">
+        <h2>🎲 6. index == 0</h2>
+        <pre>
+    <div class="image">
+      <img src="./img/wwif.PNG" alt="">
+    </div>
+        </pre>
+        <p class="explicacao">👉 É feita uma verificação condicional (<strong>if</strong>) para determinar se o valor do parâmetro <strong>index</strong> é igual a 0. Se a condição for verdadeira, o conteúdo de texto (<strong>innerText</strong>) do elemento com o ID "word" é substituído por "Hi, my name is", e o do elemento com o ID "specification" é substituído por "Walter White". A função <strong>document.getElementById( )</strong> é usada para localizar cada um desses elementos.</p>
+      </div>
+
+      <div class="bloco">
+        <h2>🎲 7. Texto dos outros ícones</h2>
+        <pre>
+    <div class="image">
+      <img src="./img/wwif5.PNG" alt="">
+    </div>
+        </pre>
+        <p class="explicacao">👉 Aqui temos o sexto <strong>if</strong>, mostrando que o modelo é igual ao primeiro.</p>
+        <p class="explicacao">👉 Faça o restante, que corresponde às verificações de 1 a 4.</p>
+        <p class="explicacao">👉 Nas linhas 39 e 40 temos o fechamento do <strong>forEach</strong> e do <strong>addEventListener</strong>.</p>
+      </div>
+
+      <h1>Card Pessoal com API</h1>
+  
+      <div class="image">
+       <img src="./img/ww.PNG">
+      </div>
+     
+      <div class="bloco">
+       <h2>🎯 Objetivo do Projeto</h2>
+       <pre>
+     - Consumir dados de uma API (randomuser.me) para gerar cards de perfis aleatórios.
+     - Utilizar funções assíncronas (async/await) para lidar com as requisições à API.
+     - Manter a interatividade dos ícones com o evento mouseenter, agora exibindo os dados vindos da API.
+       </pre>
+      </div>
+      
+      <div class="bloco">
+       <h2>📃 HTML</h2>
+       <p class="explicacao">👉 A estrutura HTML permanece a mesma do projeto anterior. A grande mudança será no JavaScript, que agora buscará os dados de uma fonte externa.</p>
+      </div>
+     
+      <div class="bloco">
+       <h2>📃 2. CSS</h2>
+       <p class="explicacao">👉 O CSS também pode ser mantido, pois a estrutura visual do card não será alterada.</p>
+      </div>
+     
+      <div class="bloco">
+       <h2>👾 3. JavaScript - Consumindo a API</h2>
+       <pre>
+       <div class="image">
+        <img src="./img/wwapitrycatch.PNG" alt="Código de fetch API com async/await">
+       </div>
+       </pre>
+       <button class="accordion">Explicação detalhada</button>
+   <div class="panel">
+       <p class="explicacao">👉 Uma função assíncrona é uma função que não precisa esperar uma tarefa terminar para continuar executando o resto do código. Isso é importante quando lidamos com APIs, porque buscar dados na internet pode demorar, e não queremos que todo o nosso site trave enquanto isso acontece.</p>
+       <p class="explicacao">👉 Para criar uma função assíncrona, usamos a palavra-chave async antes da função. Dentro dela, usamos o await para esperar uma resposta antes de seguir para a próxima linha.</p>
+       <p class="explicacao">👉 A função fetch() é usada para buscar informações de algum lugar — geralmente da internet. Ela retorna uma promessa (Promise), ou seja, uma resposta que ainda não chegou, mas que vai chegar.</p>  
+       <p class="explicacao">👉 Por isso, precisamos usar o await na frente do fetch para dizer: "Espere essa resposta antes de continuar".</p>
+       <p class="explicacao">👉 try e catch: Imagine que a internet caia ou o link da API esteja errado. O código pode dar erro! Para evitar que o site quebre, usamos try e catch. try: bloco onde colocamos o que queremos tentar executar. Catch (erro): bloco que será executado se der algum erro no try.</p>
+       <p class="explicacao">👉 data.results[0], essa linha serve, basicamente, para pegar a primeira pessoa retornada pela nossa API. O arquivo JSON começa com a chave results, por isso usamos ela no código. A constante chamada user recebe o valor de data.results[0]. A data é o nosso objeto — objetos são estruturas que armazenam várias informações dentro deles. Um exemplo comum é um carro, que pode ter modelo, nome, marca, ano etc.</p>
+       <p class="explicacao">👉 Nossa API retorna muitas informações, e por isso precisamos transformar o JSON (que é só um texto estruturado) em um objeto que o JavaScript consegue manipular. Essa conversão é feita com await response.json(), como mostramos na linha comentada do código.</p>
+       <p class="explicacao">👉 Depois que temos o objeto, só precisamos acessar os dados que queremos. Neste caso, usamos data.results[0] para pegar todas as informações da primeira pessoa gerada aleatoriamente pela API.</p>    
+       <p class="explicacao">👉 fetchRamdomUser( ) é a chamada da função, serve para rodar todo o codigo.</p>
+     </div>    
+       <p class="explicacao">👉 <strong>Resumindo:</strong> Uma função assíncrona fetchRandomUser é criada para buscar dados na API randomuser.me. O bloco try tenta fazer a requisição (fetch), converter a resposta para JSON e extrair o primeiro usuário. Se qualquer etapa falhar, o bloco catch captura o erro e o exibe no console. Finalmente, a função fetchRandomUser() é chamada para iniciar o processo.</p>
+   
+     </div>
+     
+      <div class="bloco">
+       <h2>🔄 4. Indicador de Carregamento</h2>
+       <pre>
+       <div class="image">
+        <img src="./img/wwapitext.PNG" alt="Código para exibir reticências">
+       </div>
+       </pre>
+       <p class="explicacao">👉 Antes de preencher com os novos dados, o innerText dos elementos com IDs "word" e "specification" é definido como "...", servindo como um indicador visual de que os dados estão sendo carregados.</p>
+      </div>
+     
+      <div class="bloco">
+       <h2>🖼️ 5. Exibindo Foto e Nome</h2>
+       <pre>
+       <div class="image">
+        <img src="./img/wwapifotoenome.PNG" alt="Código para exibir foto e nome do usuário">
+       </div>
+       </pre>
+       <button class="accordion">Explicação detalhada</button>
+       <div class="panel">
+       <p class="explicacao">👉 temos três linhas onde passaremos os primeiros dados da API. Na primeira linha, temos o ID da imagem e o .src, pois precisamos passar a imagem como uma fonte de arquivo (um source). Após o sinal de igual, passaremos a imagem da API. Para isso, vamos acessar o link abaixo:</p>
+   <pre>
+   <a class="download" href="https://randomuser.me/api" target="_blank" rel="noopener noreferrer">💾 Clique aqui para acessar.</a>
+   </pre>
+   <p class="explicacao">👉 Assim que o link abrir, vamos clicar na caixinha Estilos de formatação, ela vai formatar o arquivo JSON da API. Agora só precisamos procurar a imagem. Nesta API, ela está com o nome de picture. Repare abaixo:</p>    
+   <pre>
+     <div class="image">
+      <img src="./img/wwapiapi.PNG" alt="Código para exibir reticências">
+     </div>
+     </pre>
+   
+   <p class="explicacao">👉 Sabemos que nosso objeto é user. Também acabamos de ver que a imagem está com o nome picture, então temos: user.picture.</p>  
+   <p class="explicacao">👉 Reparou que existem três atributos dentro de picture: large, medium e thumbnail. Precisamos escolher um deles. Com isso, teremos: user.picture.large.</p>
+   <p class="explicacao">👉 No nosso h2, como mostrado no exemplo anterior, temos o nome e o sobrenome. Tente procurar na API essas informações. Uma dica é usar Ctrl + F e procurar por palavras-chave como name, lastname, firstname, entre outras semelhantes.</p>
+   <p class="explicacao">👉 `${user.name.first} ${user.name.last}` a craze ( ` )e o cifrão ( $ ) usados neste exemplo são chamados de tamplete literal. Aproveite o Chat GPT e pesquise sobre tamplete literal para ver as diferenças.</p>
+   </div>    
+   
+   <p class="explicacao">👉 <strong>Resumindo:</strong> Após receber os dados da API, o atributo src da imagem com ID "image-people" é atualizado com a URL da foto do usuário (user.picture.large). Os elementos "word" e "specification" são preenchidos com um texto de introdução e o nome completo do usuário, que é construído dinamicamente usando os dados user.name.first e user.name.last.</p>
+      </div>
+     
+      <div class="bloco">
+       <h2>🗃️ 6. Mapeamento dos Ícones</h2>
+       <pre>
+       <div class="image">
+        <img src="./img/wwapiquerryfor.PNG" alt="Código querySelectorAll e forEach">
+       </div>
+       </pre>
+       <p class="explicacao">👉 Aqui temos a mesma estrutura do exerício anterior. Basicamente uma constante listItem armazena todos os elementos &lt;li&gt; dentro de .list-menu. O código então percorre cada item da lista usando forEach e adiciona um "ouvinte" para o evento mouseenter, que será acionado quando o mouse passar sobre cada ícone.</p>
+      </div>
+     
+      <div class="bloco">
+       <h2>👤 7. Interação do Primeiro Ícone</h2>
+       <pre>
+       <div class="image">
+        <img src="./img/wwapifor0.PNG" alt="Código da condição if para index 0">
+       </div>
+       </pre>
+       <p class="explicacao">👉 Aqui temos a mesma condicional do projeto anterior mas, com os resultados da api.</p>
+      </div>
+   
+      <div class="bloco">
+       <h2>🎲 8. Texto dos outros ícones</h2>
+       <pre>
+   
+   <div class="image">
+     <img src="./img/wwapiend.PNG" alt="">
+   </div>
+       </pre>
+       <p class="explicacao">👉 Aqui temos o sexto <strong>if</strong>, mostrando que o modelo é igual ao primeiro.</p>
+       <p class="explicacao">👉 Faça o restante, que corresponde às verificações de 1 a 4.</p>
+       <p class="explicacao">👉 Nas linhas 51 e 52 temos o fechamento do <strong>forEach</strong> e do <strong>addEventListener</strong>.</p>
+       <p class="explicacao" style="margin-bottom: 30px">👉 A última dica é referente à data, que virá com muitos dados. Vamos limitar para exibir apenas o dia, mês e ano, utilizando o método substring(0, 10). Esse método limita a string do primeiro caractere (índice 0) até o nono, totalizando 10 caracteres. Exemplo: 10-10-2025. <code>user.dob.date.substring(0, 10)</code></p>
+     </div>
+
+  <div class="btt">
+    <div class="circle-buttons">
+      <button class="circle"><a href="./index.html">01</a></button>
+      <button class="circle"><a href="./projeto2.html">02</a></button>
+      <button class="circle"><a href="./projeto3.html">03</a></button>
+      <button class="circle"><a href="./projeto4.html">04</a></button>
+      <button class="circle"><a href="./projeto5.html">05</a></button>
+      <button class="circle"><a href="./projeto6.html">06</a></button>
+      <button class="circle"><a href="./projeto7.html">07</a></button>
+      <button class="circle"><a href="./projeto8.html">08</a></button>
+      <button class="circle"><a href="./projeto9.html">09</a></button>
+      <button class="circle"><a href="./projeto10.html">10</a></button>
+      <button class="circle"><a href="./projeto11.html">11</a></button>
+      <button class="circle"><a href="./projeto12.html">12</a></button>
+      <button class="circle"><a href="./projeto13.html">13</a></button>
+      <button class="circle"><a href="./projeto14.html">14</a></button>
+      <button class="circle"><a href="./projeto15.html">15</a></button>
+    </div>
+    <div class="top-buttons" style="margin-top: 20px;">
+      <button class="voltar">
+      <a href="./projeto6.html">Voltar</a>
+      </button>
+
+      <button class="avancar">
+        <a href="./projeto8.html">Avançar</a>
+      </button>
+    </div> 
   </div>
-<p class="explicacao">👉 <strong>Resumindo: </strong>createCard é chamada recebendo o que estava em pokeData, que agora entra como parâmetro pokemon.
-  card cria uma div e adiciona a classe "card".
-  sprite tenta carregar a imagem oficial do pokémon, se não existir, usa a sprite padrão como alternativa.
-  card.innerHTML é montado com uma tag img que mostra a imagem (sprite) e tem alt com o nome do pokémon (pokemon.name),
-  uma div class="name" que mostra o id do pokémon formatado com 3 dígitos (ex: #001), seguido do nome (Bulbasaur)
-  uma div class="types" com os tipos do pokémon. O .map( ) cria um span para cada tipo ( t.type.name ), e o .join(" ") junta tudo sem separador (ficando Grass Poison, cada um em um span). O span é usado porque é inline, deixando tudo na mesma linha.
-  Por fim, o card completo é adicionado dentro da pokedex (div principal) usando pokedex.appendChild(card).</p>
-</div>
- 
- <div class="bloco">
-  <h2>🖱️ 4. Evento do Botão "Carregar Mais"</h2>
-  <pre>
-    <div class="image">
-      <img src="./img/poke4.PNG" alt="">
-    </div>
-  </pre>
-  <button class="accordion">Explicação detalhada</button>
-  <div class="panel">
-<p class="explicacao">👉 O método .addEventListener() é usado para anexar um manipulador de eventos ao elemento loadMoreBtn (o botão "Carregar Mais"). O evento que ele está esperando é o "click". Quando o botão é clicado, a função de callback (a função de seta () =&gt; { ... }) será executada.</p>
-<p class="explicacao">👉 O valor atual da variável offset é incrementado pelo valor de limit (offset += limit é o mesmo que offset = offset + limit). Isso prepara a próxima chamada à API para começar a buscar dados a partir do final do lote anterior (ex: se o offset era 0 e o limit era 150, o novo offset será 150).</p>
-<p class="explicacao">👉 A função getPokemons é chamada, passando o novo valor de offset e o valor de limit. Isso inicia a busca e exibição do próximo lote de Pokémon.</p>
-<p class="explicacao">👉 Esta linha é a primeira chamada da função getPokemons quando o script é carregado. Ela inicia o processo de busca e exibição dos primeiros Pokémon (usando os valores iniciais de offset = 0 e limit = 150), preenchendo a tela logo de início.</p>
-  </div>
-<p class="explicacao">👉 <Strong>Resumindo:</Strong> Linha 50: chama a função getPokemons(offset, limit) 👉 getPokemons(0, 150) logo que o script inicia, ou seja, começa mostrando do Pokémon #001 até  #150.
-Linha 45: quando o botão "Carregar mais" é clicado, o offset é atualizado com offset += limit. Assim, se antes era 0, passa a ser 150.
-Isso faz com que a próxima chamada busque os Pokémon a partir do #151 até  #300, sempre em blocos de 150, neste caso. Se você simplesmente alterar a variável limit, vai carregar em blocos no valor que você escolheu.</p>
-</div>
 
-<div class="bloco">
-  <h2>⛪ 5. Desafio - Usar a API Random User Generator</h2>
-  <p class="explicacao">👉 Modificar o projeto para funcionar com outra api.</p>
-  <p class="explicacao">👉 Poucas coisas precisam ser modificadas, como, URL e a passagem de dados.</p>
-
-  <pre>
-    <div class="image">
-      <img src="./img/userGeneratorlogo.PNG" alt="">
-    </div>
-    <div class="image">
-      <img src="./img/userGeneratorlogoURL.PNG" alt=""> 
-    </div>
-    <div class="image">
-      <img src="./img/userGeneratorlogo1.PNG" alt="">
-    </div>
-  </pre>
-  <p class="explicacao">👉 Repare em createCard(user): estamos chamando a função e passando para ela o parâmetro user.</p>
-  <p class="explicacao">👉 Na função function createCard(), devemos colocar o parâmetro dentro dos parênteses, com qualquer nome, pois ele recebe o que foi passado.</p>
-  <p class="explicacao">👉 No restante do código, sabemos que sempre usaremos esse parâmetro para acessar os dados.</p>
-  <p class="explicacao">👉 Exemplo: function createCard(randomUser).</p>
-  <p class="explicacao">👉 const sprite = user.picture.large.</p>
-  <p class="explicacao">👉 Altere o css para que tudo fique organizado.</p>
-  <p class="explicacao" style="margin-bottom: 30px">💰 Este desafio vale 10 moedas.</p>
-</div>
- 
-<div class="btt">
-  <div class="circle-buttons">
-    <button class="circle"><a href="./index.html">01</a></button>
-    <button class="circle"><a href="./projeto2.html">02</a></button>
-    <button class="circle"><a href="./projeto3.html">03</a></button>
-    <button class="circle"><a href="./projeto4.html">04</a></button>
-    <button class="circle"><a href="./projeto5.html">05</a></button>
-    <button class="circle"><a href="./projeto6.html">06</a></button>
-    <button class="circle"><a href="./projeto7.html">07</a></button>
-    <button class="circle"><a href="./projeto8.html">08</a></button>
-    <button class="circle"><a href="./projeto9.html">09</a></button>
-    <button class="circle"><a href="./projeto10.html">10</a></button>
-    <button class="circle"><a href="./projeto11.html">11</a></button>
-    <button class="circle"><a href="./projeto12.html">12</a></button>
-    <button class="circle"><a href="./projeto13.html">13</a></button>
-    <button class="circle"><a href="./projeto14.html">14</a></button>
-    <button class="circle"><a href="./projeto15.html">15</a></button>
-  </div>
-  <div class="top-buttons" style="margin-top: 20px;">
-    <button class="voltar">
-    <a href="./projeto6.html">Voltar</a>
-    </button>
-
-    <button class="avancar">
-      <a href="./projeto8.html">Avançar</a>
-    </button>
-  </div> 
-</div>
-
- <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
