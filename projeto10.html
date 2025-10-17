@@ -32,7 +32,7 @@
     </div>
   </div>
   
-  <h1> Cadastro de Pessoas</h1>
+  <h1>Cadastro de Pessoas</h1>
 
   <div class="image">
     <img src="./img/objetosimples.PNG" alt="">
@@ -43,18 +43,15 @@
     <pre>
 - Criar um sistema de cadastro de pessoas, onde informações como nome, e-mail e idade são inseridas em um formulário.
 - Cada nova pessoa cadastrada será exibida em um "card" na tela.
-- O formulário deve ser limpo após o envio e os dados armazenados em uma lista.
+- O formulário deve ser limpo após o envio, e os dados armazenados em uma lista.
 
-<a class="download" href="./projeto3/style.css" download>💾 Clique aqui para baixar o Css</a>
+<a class="download" href="./projeto3/style.css" download>💾 Clique aqui para baixar o CSS</a>
     </pre>
   </div>
 
   <div class="bloco">
-    <h2>📘 informações iniciais</h2>
-    <!-- <pre>
-// Estamos trabalhando com formulários então, a tag form deve ser usada, é nela que temos o id!
-    </pre> -->
-    <p class="explicacao">👉 Estamos trabalhando com formulários então, a tag form deve ser usada, é nela que temos o id!</p>
+    <h2>📘 Informações Iniciais</h2>
+    <p class="explicacao">👉 Estamos trabalhando com formulários, então a tag form deve ser usada. É nela que temos o id!</p>
     <p class="explicacao">👉 O CSS está pronto, você baixou o arquivo acima. Verifique se o CSS da imagem deste tutorial e o seu estão iguais; caso não estejam, é porque as classes não foram criadas ou não estão com o mesmo nome do CSS.</p>
   </div>
   
@@ -86,9 +83,12 @@
       </div>
     </pre>
     <p class="explicacao">👉 O addEventListener é usado para escutar o evento de envio do formulário. O evento que queremos capturar é submit.</p>
-    <p class="explicacao">👉 function(event). Esta é a função de callback que será executada toda vez que o evento de submit ocorrer no formulário. O objeto event é passado para esta função, contendo informações sobre o evento que acabou de acontecer.</p>
-    <p class="explicacao">👉 Esta é a parte crucial. Quando um formulário HTML é enviado (por exemplo, clicando em um botão de envio), o comportamento padrão do navegador é: a. Recarregar a página. b. Tentar navegar para a URL especificada no atributo action do formulário (ou a mesma página, se não houver um action). c. Anexar os dados do formulário à URL (se o método for GET) ou enviá-los no corpo da requisição (se o método for POST).</p>
-    <p class="explicacao">👉 👉 O preventDefault evita que a página seja recarregada ao enviar o formulário, algo que acontece por padrão com o evento submit.</p>     
+    <p class="explicacao">👉 function(event): esta é a função de callback que será executada toda vez que o evento de submit ocorrer no formulário. O objeto event é passado para esta função, contendo informações sobre o evento que acabou de acontecer.</p>
+    <p class="explicacao">👉 Esta é a parte crucial. Quando um formulário HTML é enviado (por exemplo, clicando em um botão de envio), o comportamento padrão do navegador é:  
+    a) Recarregar a página.  
+    b) Tentar navegar para a URL especificada no atributo action do formulário (ou a mesma página, se não houver um action).  
+    c) Anexar os dados do formulário à URL (se o método for GET) ou enviá-los no corpo da requisição (se o método for POST).</p>
+    <p class="explicacao">👉 O preventDefault evita que a página seja recarregada ao enviar o formulário, algo que acontece por padrão com o evento submit.</p>     
   </div>
   
   <div class="bloco">
@@ -102,48 +102,40 @@
   </div>
 
   <div class="bloco">
-    <h2>🧼 6. Criando o Objeto com os Dados</h2>
+    <h2>🎲 5. Criando o Objeto com os Dados</h2>
     <pre>
       <div class="image">
         <img src="./img/objetosimplesobjeto.PNG" alt="">
       </div>
     </pre>
-    <p class="explicacao">👉 O objeto pessoa é criado para armazenar os dados inseridos pelo usuário no formulário. Isso ajuda a organizar os dados de forma estruturada.</p>
-    <p class="explicacao">👉 nome, email e idade são chamados de propriedades. Neste caso propriedades do objeto pessoa.</p>
+    <p class="explicacao">👉 O objeto pessoa é criado para armazenar os dados inseridos pelo usuário no formulário. Isso ajuda a organizar as informações de forma estruturada.</p>
+    <p class="explicacao">👉 nome, email e idade são chamados de propriedades — neste caso, propriedades do objeto pessoa.</p>
   </div>
   
   <div class="bloco">
-    <h2>👁️ 7. Adicionando o Objeto à Lista, chamando a função e resetando formulário</h2>
+    <h2>👁️ 6. Adicionando o Objeto à Lista, Chamando a Função e Resetando o Formulário</h2>
     <pre>
       <div class="image">
         <img src="./img/objetosimplescriaçaoe functions.PNG" alt="">
       </div>
     </pre>
-    <p class="explicacao">👉 A função javaScript "push" adiciona o objeto [🙍‍♂️] à lista de pessoas [📑], armazenando todos os cadastros realizados.</p>
-    <p class="explicacao">👉 exibirCards() é uma função, ainda não criamos ela, ela vai servir para mostrar os cards.</p>
-    <p class="explicacao">👉 📮.reset() é uma função javaScript para resetar os campos do formulários</p>
+    <p class="explicacao">👉 A função JavaScript "push" adiciona o objeto pessoa à lista de pessoas, armazenando todos os cadastros realizados.</p>
+    <p class="explicacao">👉 exibirCards( ) é uma função que ainda não criamos; ela servirá para mostrar os cards.</p>
+    <p class="explicacao">👉 form.reset( ) é uma função JavaScript usada para limpar os campos do formulário.</p>
   </div>
   
   <div class="bloco">
-    <h2>🔍 8. Função de Exibir os Cards</h2>
+    <h2>🔍 7. Função de Exibir os Cards</h2>
     <pre>
-function exibirCards()
-[📦].innerHTML = '';
-
-// Para cada pessoa, criamos um card
-[📑].forEach([📚] => {
-  const [🎴] = document.createElement('div');
-  [🎴].classList.add('[......]');
-  [🎴].innerHTML = 
-        "&lt;h3&gt;" + [📚].nome + "&lt;/h3&gt;" +
-        "&lt;p&gt;Email: " + [📚].email + "&lt;/p&gt;" +
-        "&lt;p&gt;Idade: " + [📚].idade + "&lt;/p&gt;";
-
-  // Adicionando o card à área de exibição
-  [📦].appendChild([🎴]);
-});
+      <div class="image">
+        <img src="./img/objetosimplesexibir.PNG">
+      </div>
     </pre>
-    <p class="explicacao">👉 Aqui, usamos forEach para percorrer a lista de pessoas [📑] e criar um card para cada item da lista. Cada card é adicionado ao container de cards [📦].</p>
+    <p class="explicacao">👉 Na linha 25, limpamos o conteúdo do container de exibição (cardsContainer) para remover os cards antigos.</p>
+    <p class="explicacao">👉 Na linha 26, percorremos a lista de objetos (pessoas).</p>
+    <p class="explicacao">👉 Nas linhas 27 a 33, para cada objeto pessoa, criamos uma nova tag div, que é o nosso "card". Adicionamos a classe CSS "carta" e preenchemos seu HTML com as informações de nome, e-mail e idade.</p>
+    <p class="explicacao">👉 Na linha 35, anexamos o novo card ao cardsContainer, tornando-o visível na página.</p>
+    <p class="explicacao">👉 <strong>Resumindo:</strong> usamos forEach para percorrer a lista de pessoas e criar um card para cada item da lista. Cada card é adicionado ao container de cards.</p>
   </div>
 
   <div class="btt">
@@ -166,9 +158,8 @@ function exibirCards()
     </div>
     <div class="top-buttons" style="margin-top: 20px;">
       <button class="voltar">
-      <a href="./projeto9.html">Voltar</a>
+        <a href="./projeto9.html">Voltar</a>
       </button>
-  
       <button class="avancar">
         <a href="./projeto11.html">Avançar</a>
       </button>
