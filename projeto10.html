@@ -50,7 +50,7 @@
   </div>
 
   <div class="bloco">
-    <h2>📀 informações iniciais</h2>
+    <h2>📘 informações iniciais</h2>
     <!-- <pre>
 // Estamos trabalhando com formulários então, a tag form deve ser usada, é nela que temos o id!
     </pre> -->
@@ -59,77 +59,65 @@
   </div>
   
   <div class="bloco">
-    <h2>🧱 1. Selecionando os Elementos</h2>
+    <h2>🗃 1. Selecionando os Elementos</h2>
     <pre>
-// Como selecionar o formulário de cadastro?
-const [📮] = document.getElementById('[......]');
-  
-// Como selecionar a área onde os cards serão exibidos?
-const [📦] = document.getElementById('[......]');
+      <div class="image">
+        <img src="./img/objetopessoaelementos.PNG" alt="">
+      </div>
     </pre>
-    <p class="explicacao">👉 Aqui, usamos getElementById para selecionar os elementos do HTML, como o formulário e a área onde os cards serão exibidos.</p>
+    <p class="explicacao">👉 Aqui, usamos getElementById para selecionar os elementos do HTML, como o formulário e a área onde os cards serão exibidos. Repare que estamos usando o id na tag form.</p>
   </div>
 
   <div class="bloco">
-    <h2>🧱 2. Declarando a Lista de Pessoas</h2>
+    <h2>📃 2. Declarando a Lista de Pessoas</h2>
     <pre>
-// Declarando a lista onde as pessoas serão armazenadas
-let [📑] = [];
+      <div class="image">
+        <img src="./img/objetosimpleslista.PNG" alt="">
+      </div>
     </pre>
-    <p class="explicacao">👉 A variável [📑] é um array vazio que armazenará os objetos das pessoas cadastradas. A cada envio de formulário, um novo objeto será adicionado à lista.</p>
+    <p class="explicacao">👉 A variável pessoas é um array vazio que armazenará os objetos das pessoas cadastradas. A cada envio de formulário, um novo objeto será adicionado à lista.</p>
   </div>
   
   <div class="bloco">
     <h2>🖱️ 3. Detectando o Envio do Formulário</h2>
     <pre>
-// Adicionando um ouvinte de evento para o envio do formulário
-[📮].addEventListener('[...]', function([🎲]) {
-  // Aqui dentro você programará o que acontece ao enviar o formulário.
-});
+      <div class="image">
+        <img src="./img/objetosimplesListner.PNG" alt="">
+      </div>
     </pre>
-    <p class="explicacao">👉 O addEventListener é usado para escutar o evento de envio do formulário. O parâmetro [🎲] normalmente é chamado de <strong>event</strong> e representa o evento que queremos capturar (neste caso, submit).</p>
+    <p class="explicacao">👉 O addEventListener é usado para escutar o evento de envio do formulário. O evento que queremos capturar é submit.</p>
+    <p class="explicacao">👉 function(event). Esta é a função de callback que será executada toda vez que o evento de submit ocorrer no formulário. O objeto event é passado para esta função, contendo informações sobre o evento que acabou de acontecer.</p>
+    <p class="explicacao">👉 Esta é a parte crucial. Quando um formulário HTML é enviado (por exemplo, clicando em um botão de envio), o comportamento padrão do navegador é: a. Recarregar a página. b. Tentar navegar para a URL especificada no atributo action do formulário (ou a mesma página, se não houver um action). c. Anexar os dados do formulário à URL (se o método for GET) ou enviá-los no corpo da requisição (se o método for POST).</p>
+    <p class="explicacao">👉 👉 O preventDefault evita que a página seja recarregada ao enviar o formulário, algo que acontece por padrão com o evento submit.</p>     
   </div>
   
   <div class="bloco">
-    <h2>❌ 4. Prevenindo o Comportamento Padrão</h2>
+    <h2>✅ 4. Coletando os Dados do Formulário</h2>
     <pre>
-// Prevenindo que o formulário recarregue a página
-[🎲].preventDefault();
+      <div class="image">
+        <img src="./img/objetosimplesformulario.PNG" alt="">
+      </div>
     </pre>
-    <p class="explicacao">👉 O preventDefault evita que a página seja recarregada ao enviar o formulário, algo que acontece por padrão com o evento submit.</p>
-  </div>
-
-  <div class="bloco">
-    <h2>✅ 5. Coletando os Dados do Formulário</h2>
-    <pre>
-// Coletando os valores dos campos do formulário
-const [📚] = document.getElementById('[......]').value;
-const [🧰] = document.getElementById('[......]').value;
-const [📦] = document.getElementById('[......]').value;
-    </pre>
-    <p class="explicacao">👉 Usamos `getElementById` para acessar os valores inseridos pelo usuário nos campos de nome, e-mail e idade.</p>
+    <p class="explicacao">👉 Usamos getElementById para acessar os valores inseridos pelo usuário nos campos de nome, e-mail e idade.</p>
   </div>
 
   <div class="bloco">
     <h2>🧼 6. Criando o Objeto com os Dados</h2>
     <pre>
-// Criando um objeto com os dados coletados
-const [🙍‍♂️] = {
-  nome: [📚],
-  email: [🧰],
-  idade: [📦]
-};
+      <div class="image">
+        <img src="./img/objetosimplesobjeto.PNG" alt="">
+      </div>
     </pre>
-    <p class="explicacao">👉 O objeto [🙍‍♂️] é criado para armazenar os dados inseridos pelo usuário no formulário. Isso ajuda a organizar os dados de forma estruturada.</p>
+    <p class="explicacao">👉 O objeto pessoa é criado para armazenar os dados inseridos pelo usuário no formulário. Isso ajuda a organizar os dados de forma estruturada.</p>
+    <p class="explicacao">👉 nome, email e idade são chamados de propriedades. Neste caso propriedades do objeto pessoa.</p>
   </div>
   
   <div class="bloco">
     <h2>👁️ 7. Adicionando o Objeto à Lista, chamando a função e resetando formulário</h2>
     <pre>
-// Adicionando o objeto à lista de pessoas
-[📑].push([🙍‍♂️]);
-exibirCards();
-📮.reset();
+      <div class="image">
+        <img src="./img/objetosimplescriaçaoe functions.PNG" alt="">
+      </div>
     </pre>
     <p class="explicacao">👉 A função javaScript "push" adiciona o objeto [🙍‍♂️] à lista de pessoas [📑], armazenando todos os cadastros realizados.</p>
     <p class="explicacao">👉 exibirCards() é uma função, ainda não criamos ela, ela vai servir para mostrar os cards.</p>
