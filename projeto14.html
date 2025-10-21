@@ -29,27 +29,70 @@
       <button class="circle"><a href="./projeto15.html">15</a></button>
     </div>
     <div class="top-buttons">
-      <button class="avancar">💰 20</button>
+      <button class="avancar">💰 15</button>
       <button class="avancar" onclick="toggleDarkMode()">👓</button>
     </div>
   </div>
 
-<h1 class="tit">Toggle</h1>
+<h1 class="tit">Alternância de tema</h1>
 <div class="image">
-  <!-- <img src="./img/clickerlogo.PNG" alt=""> -->
+  <img src="./img/togglepreto.PNG">
 </div>
+<div class="image">
+  <img src="./img/togglewhite.PNG">
+</div>
+
   <div class="bloco">
     <h2>🎯 Objetivo do Projeto</h2>
     <pre>
-- 
-- 
-- 
-- 
+- Alternar entre dois estados visuais (temas), mudando as classes CSS aplicadas ao elemento body.
     </pre>
-    <p class="explicacao">👉 </p>
   </div>
 
-  
+  <div class="bloco">
+    <h2>📃 1. HTML</h2>
+    <pre>
+      <div class="image">
+        <img src="./img/togglehtml.PNG" alt="">
+      </div>
+    </pre>
+    <p class="explicacao">👉 HTML básico com todas as classes que usaremos.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>👾 2. JavaScript</h2>
+    <pre>
+      <div class="image">
+        <img src="./img/togglejavascript.PNG" alt="">
+      </div>
+    </pre>
+    <p class="explicacao">👉 "Ativamos" a função por meio do mapeamento do ID.</p>
+    <p class="explicacao">👉 O método <code>classList.toggle()</code> verifica se a classe "modewhite" já existe no elemento body. Se existir, a classe é removida; caso contrário, é adicionada.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🖼 3. CSS</h2>
+    <p class="explicacao">👉 À esquerda temos o CSS padrão, com tamanhos, espaçamentos etc. À direita, temos o CSS responsável apenas pelas mudanças de cores e pela aplicação da classe toggle no elemento pai <code>body</code>. Todo o CSS do nosso tema terá o formato <code>body.modewhite</code> (sem espaços). Depois, adicionamos a tag ou classe, como em <code>body.modewhite h2</code>.</p>
+    <pre>
+      <div class="image">
+        <img src="./img/togglecss1.png" alt="">
+      </div>
+      <div class="image">
+        <img src="./img/togglecss2.png" alt="">
+      </div>
+      <div class="image">
+        <img src="./img/togglecss3.png" alt="">
+      </div>
+    </pre>
+    <p class="explicacao">👉 O "truque" na mudança de cor, na verdade, está no CSS, que contém todas as classes com os dois modos. O JavaScript apenas faz a troca entre elas.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>⛪ 4. Desafio</h2>
+    <p class="explicacao">👉 Escolha três de seus projetos e implemente essa troca de tema, seja por um botão ou da forma que preferir.</p>
+    <p class="explicacao" style="margin-bottom: 30px">💰 Este desafio vale 20 moedas pelos três projetos.</p>
+  </div>
+
   <div class="btt">
     <div class="circle-buttons">
       <button class="circle"><a href="./index.html">01</a></button>
@@ -70,7 +113,7 @@
     </div>
     <div class="top-buttons" style="margin-top: 20px;">
       <button class="voltar">
-      <a href="./projeto13.html">Voltar</a>
+        <a href="./projeto13.html">Voltar</a>
       </button>
 
       <button class="avancar">
@@ -78,6 +121,7 @@
       </button>
     </div> 
   </div>
+
   <script src="./script.js"></script>
 </body>
 
