@@ -120,7 +120,8 @@
       </pre>
       <p class="explicacao">👉 A condição <strong><code>if</code></strong> verifica se o nome e a idade digitados no input são idênticos aos valores das variáveis que receberam o que estava na <code>td</code> da primeira linha, que armazena o nome e na outra <code>td</code> desta mesma linha, que armazena a idade.</p>
       <p class="explicacao">👉 Se a condição <code>if</code> for verdadeira, o método <code>tabela.deleteRow(i)</code> é chamado. Ele usa o índice <code>i</code> para remover a linha da tabela permanentemente. O <code>return</code> encerra a função imediatamente após a remoção.</p>
-      <p class="explicacao">👉 O <code>else</code> serve quando o nome e a idade digitados não são iguais ao armazendo na tabela, isso quer dizer que não podemos deletar, pois não achamos ninguém.</p>
+      <p class="explicacao">👉 O <code>return</code> é usado quando o nome e a idade digitados não correspondem aos armazenados na tabela. Isso significa que não podemos deletar, pois não encontramos ninguém. Ao mesmo tempo, precisamos sair do laço <code>for</code> para indicar que não houve correspondência, caso contrário, a mensagem de "não encontrado" apareceria para cada linha pesquisada.</p>
+
      </div>
 
      <div class="bloco">
@@ -131,6 +132,7 @@
         </div>
       </pre>
       <p class="explicacao">👉 No final, os campos de input são <strong>limpos</strong>, reatribuindo uma string vazia (<code>" "</code>) ao seu valor .value.</p>
+      <p class="explicacao">👉 A mensagem no alert pode finalmente ser mostrada.</p>
      </div>
 
      <div class="bloco">
