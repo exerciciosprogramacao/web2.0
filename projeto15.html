@@ -116,7 +116,7 @@
   adicione novos registros sem problemas.</p>
  
 </div>
-<p class="explicacao">👉<strong>Resumindo:</strong> a linha 9 tenta carregar os dados salvos e, se não encontrar nada, inicia um array vazio, pronto para ser usado!</p>
+<p class="explicacao">👉<strong> Resumindo:</strong> a linha 9 tenta carregar os dados salvos e, se não encontrar nada, inicia um array vazio, pronto para ser usado!</p>
 
  </div>
 
@@ -143,7 +143,7 @@
      "Cancelar". O confirm retorna um valor booleano: true → se o usuário clicou em OK, false → se o usuário
      clicou em Cancelar.</p>
 </div>
-   <p class="explicacao">👉<strong>Resumindo:</strong> reagimos aos cliques dos botões, chamando funções que podem receber parâmetros. O addEventListener dispara essas funções, confirm() mostra caixas de confirmação retornando verdadeiro ou falso, e localStorage.removeItem() apaga os dados do navegador quando necessário, como no botão de resetar.</p>
+   <p class="explicacao">👉<strong> Resumindo:</strong> reagimos aos cliques dos botões, chamando funções que podem receber parâmetros. O addEventListener dispara essas funções, confirm() mostra caixas de confirmação retornando verdadeiro ou falso, e localStorage.removeItem() apaga os dados do navegador quando necessário, como no botão de resetar.</p>
  </div>
 
  <div class="bloco">
@@ -184,7 +184,7 @@
 </div>
 
 
-   <p class="explicacao">👉<strong>Resumindo:</strong> a classe Ponto é um modelo para criar objetos que registram horários de uma pessoa, como chegada, saída e intervalos. O constructor cria o objeto com espaços para esses horários. O método registrarHora(tipo) registra o horário atual para tipos válidos, retornando uma mensagem de confirmação, e evita registros inválidos. O método obterRegistro() retorna os horários que já foram registrados.</p>
+   <p class="explicacao">👉<strong> Resumindo:</strong> a classe Ponto é um modelo para criar objetos que registram horários de uma pessoa, como chegada, saída e intervalos. O constructor cria o objeto com espaços para esses horários. O método registrarHora(tipo) registra o horário atual para tipos válidos, retornando uma mensagem de confirmação, e evita registros inválidos. O método obterRegistro() retorna os horários que já foram registrados.</p>
  </div>
 
  <div class="bloco">
@@ -244,7 +244,7 @@
  
  <p class="explicacao">👉 Por último, temos a variável registrosLista, que é a variável que recebeu o id da lista ul. Essa variável vai receber a outra variável html escrevendo em html.registrosLista.innerHTML += html.</p>
 </div>
-<p class="explicacao">👉<strong>Resumindo:</strong> a função atualizarInterface() mostra na tela os nomes e horários registrados pelos usuários. Primeiro, ela limpa a lista para evitar duplicação e verifica se há registros; se não houver, exibe “Nenhum registro encontrado” e encerra. Para cada registro no array, percorre os horários usando forEach e for...in, formata cada tipo de ponto (como chegada ou saída) com switch e cria o HTML correspondente com divs para nome e horários. Por fim, esse HTML é inserido na lista da página usando innerHTML, atualizando o que o usuário vê.</p>
+<p class="explicacao">👉<strong> Resumindo:</strong> a função atualizarInterface() mostra na tela os nomes e horários registrados pelos usuários. Primeiro, ela limpa a lista para evitar duplicação e verifica se há registros; se não houver, exibe “Nenhum registro encontrado” e encerra. Para cada registro no array, percorre os horários usando forEach e for...in, formata cada tipo de ponto (como chegada ou saída) com switch e cria o HTML correspondente com divs para nome e horários. Por fim, esse HTML é inserido na lista da página usando innerHTML, atualizando o que o usuário vê.</p>
 
  </div>
 
@@ -280,7 +280,7 @@
     '' limpa o campo de nome, deixando-o pronto para o próximo registro.</p>
 </div>
 
-<p class="explicacao">👉<strong>Resumindo:</strong> a função registrarPonto(tipo) gerencia todo o processo de registro: recebe o tipo de ponto do botão clicado, pega o nome do input e verifica se ele não está vazio. Em seguida, procura um registro existente para essa pessoa; se não existir, cria um novo objeto Ponto e adiciona ao array de registros. Depois, registra o horário usando o método da classe, salva os dados no localStorage, atualiza a interface e limpa o campo de nome para o próximo registro..</p>
+<p class="explicacao">👉<strong> Resumindo:</strong> a função registrarPonto(tipo) gerencia todo o processo de registro: recebe o tipo de ponto do botão clicado, pega o nome do input e verifica se ele não está vazio. Em seguida, procura um registro existente para essa pessoa; se não existir, cria um novo objeto Ponto e adiciona ao array de registros. Depois, registra o horário usando o método da classe, salva os dados no localStorage, atualiza a interface e limpa o campo de nome para o próximo registro..</p>
  </div>
   <div class="bloco">
    <h2>📺 8. Inicialização e carregamento do relógio ponto</h2>
@@ -322,7 +322,11 @@
       </button> -->
     </div> 
   </div>
- 
+ <footer class="footer">
+  © 2025 — Criado por <strong>Julian Pedro De Alexandre</strong>
+</footer>
+
+
   <script src="./script.js"></script>
 </body>
 
