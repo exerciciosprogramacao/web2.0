@@ -178,6 +178,19 @@ button {
   width: 62.67px;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #eee;
+}
+
+body.cyberpunk .footer {
+
+  color: #333;
+
+}
 @media (max-width: 768px) {
 
   img {
@@ -200,7 +213,7 @@ button {
   .btt .circle-buttons {
     display: flex;
     flex-wrap: wrap; /* permite quebrar linha se necessário */
-    gap: 3px;
+    gap: 2.5px;
     width: 100%;
    }
 
