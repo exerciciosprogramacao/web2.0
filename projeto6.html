@@ -68,7 +68,7 @@ Após isso, uma pasta será criada com todos os arquivos.
 
 
 <div class="image">
-  <img src="./img/exe2getelement.PNG" alt="">
+  <img src="./img/carrosselcode1.PNG" alt="">
 </div>
     </pre>
     <p class="explicacao">👉 <strong>querySelectorAll</strong> retorna uma lista de todos os elementos que possuem a classe informada. Essa lista permite acessar cada botão ou imagem pelo índice (como se fosse um array).</p>
@@ -99,28 +99,14 @@ Após isso, uma pasta será criada com todos os arquivos.
 
 
 <div class="image">
-  <img src="./img/exe2querry1.PNG" alt="">
+  <img src="./img/carrosselcode2.PNG" alt="">
 </div>
     </pre>
     <p class="explicacao">👉 <strong>querySelector</strong> retorna o primeiro elemento que possui a classe informada. Aqui, ele pega o botão que está atualmente com a classe ativa.</p>
     <p class="explicacao">👉 Usamos <code>classList.remove()</code> para remover a classe "selecionado" dele. Repare que não usamos o ponto (.) antes do nome da classe, pois estamos nos referindo à classe em si, e não ao seletor.</p>
     <p class="explicacao">👉 Quando falamos de seletores, usamos o ponto (.) na frente; quando falamos de classes, não usamos o ponto.</p>
   </div>
-  
-  <div class="bloco">
-    <h2>✅ 4. Marcando o Novo Botão</h2>
-    <pre>
-- Adicione a classe "selecionado" ao botão que foi clicado.
-
-
-<div class="image">
-  <img src="./img/exe2classadd1.PNG" alt="">
-</div>
-    </pre>
-    <p class="explicacao">👉 O botão clicado está representado pelo parâmetro <code>botao</code>. Ao usar <code>classList.add</code>, ele ganha o estilo visual de selecionado.</p>
-  </div>
-  
-  <div class="bloco">
+    <div class="bloco">
     <h2>🧼 5. Escondendo a Imagem Atual</h2>
     <pre>
 - Selecione a imagem atual que está com a classe "ativa".
@@ -132,7 +118,19 @@ Após isso, uma pasta será criada com todos os arquivos.
     </pre>
     <p class="explicacao">👉 Assim como fizemos com os botões, removemos a classe da imagem atual, que está sendo exibida.</p>
   </div>
-  
+  <div class="bloco">
+    <h2>✅ 4. Marcando o Novo Botão</h2>
+    <pre>
+- Adicione a classe "selecionado" ao botão que foi clicado.
+
+
+<div class="image">
+  <img src="./img/carrosselcode3.PNG" alt="">
+</div>
+    </pre>
+    <p class="explicacao">👉 O botão clicado está representado pelo parâmetro <code>botao</code>. Ao usar <code>classList.add</code>, ele ganha o estilo visual de selecionado.</p>
+  </div>
+    
   <div class="bloco">
     <h2>👁️ 6. Mostrando a Imagem Certa</h2>
     <pre>
@@ -140,7 +138,7 @@ Após isso, uma pasta será criada com todos os arquivos.
 
 
 <div class="image">
-  <img src="./img/exe2classadd2.PNG" alt="">
+  <img src="./img/carrosselcode4.PNG" alt="">
 </div>
     </pre>
     <p class="explicacao">👉 A imagem correta está na mesma posição (índice) que o botão clicado.</p>
